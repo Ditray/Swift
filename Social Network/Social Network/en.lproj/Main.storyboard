@@ -177,7 +177,7 @@
         <!--Friends-->
         <scene sceneID="YRa-fr-dUD">
             <objects>
-                <viewController id="7zO-3P-6Cw" userLabel="Friends" sceneMemberID="viewController">
+                <viewController id="7zO-3P-6Cw" userLabel="Friends" customClass="FriendsController" customModule="Social_Network" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uLZ-Dy-6qr">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -187,15 +187,33 @@
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="separatorColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="quR-ac-cRt">
-                                        <rect key="frame" x="0.0" y="28" width="428" height="43.666667938232422"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FriendsCell" id="quR-ac-cRt" customClass="CellPrototipe" customModule="Social_Network" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="428" height="46.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="quR-ac-cRt" id="ciy-XL-V4D">
-                                            <rect key="frame" x="0.0" y="0.0" width="428" height="43.666667938232422"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="428" height="46.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Fw-wh-cJm">
+                                                    <rect key="frame" x="178.66666666666666" y="5" width="71" height="36.666666666666664"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="36.329999999999998" id="Bqf-O8-Zll"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="7Fw-wh-cJm" secondAttribute="bottom" constant="5" id="HbF-UM-2AV"/>
+                                                <constraint firstItem="7Fw-wh-cJm" firstAttribute="top" secondItem="ciy-XL-V4D" secondAttribute="top" constant="5" id="XQ8-PX-jaO"/>
+                                                <constraint firstItem="7Fw-wh-cJm" firstAttribute="centerX" secondItem="ciy-XL-V4D" secondAttribute="centerX" id="l8Z-Ap-PTM"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="giD-2R-25R" kind="show" trigger="accessoryAction" id="Qjy-h2-L7K"/>
+                                            <outlet property="LabelCell" destination="7Fw-wh-cJm" id="ZSd-tj-s5B"/>
+                                            <segue destination="giD-2R-25R" kind="show" identifier="FriendSegue" id="fUF-jg-53v"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -212,15 +230,18 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="nyK-Im-LFA"/>
+                    <connections>
+                        <outlet property="tableView" destination="rb1-jt-nlT" id="XP4-Kp-RCn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dte-cH-9rw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2457" y="-327"/>
         </scene>
-        <!--Collection View Controller-->
+        <!--Friend View Controller-->
         <scene sceneID="KXk-rd-ZBY">
             <objects>
-                <collectionViewController id="giD-2R-25R" sceneMemberID="viewController">
+                <collectionViewController id="giD-2R-25R" customClass="FriendViewController" customModule="Social_Network" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Lpd-1f-pxy">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -250,7 +271,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hub-nx-OaX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3065.8878504672894" y="-327.21382289416852"/>
+            <point key="canvasLocation" x="3066" y="-327"/>
         </scene>
         <!--Groups-->
         <scene sceneID="Dsm-Tw-YeP">
