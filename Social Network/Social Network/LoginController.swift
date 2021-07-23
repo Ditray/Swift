@@ -11,7 +11,7 @@ class LoginController: UIViewController {
 
     //MARK:- Properties
     @IBOutlet var loginField: UITextField!
-    @IBOutlet var passwordDield: UITextField!
+    @IBOutlet var passwordField: UITextField!
     @IBOutlet var scrollView: UIScrollView!
     @IBAction func button(_ sender: UIButton) {
         performSegue(withIdentifier: "MainSegue", sender:self )
