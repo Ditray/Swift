@@ -175,7 +175,7 @@
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KmE-a4-o1F">
                                                     <rect key="frame" x="10" y="10" width="100" height="100"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="100" id="HqI-P3-M2r"/>
+                                                        <constraint firstAttribute="width" priority="999" constant="100" id="HqI-P3-M2r"/>
                                                         <constraint firstAttribute="width" secondItem="KmE-a4-o1F" secondAttribute="height" multiplier="1:1" id="SQc-3G-Xga"/>
                                                     </constraints>
                                                 </imageView>
@@ -254,7 +254,7 @@
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="yoh-rK-SAI">
                                             <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="150" id="4KH-lR-6nT"/>
+                                                <constraint firstAttribute="width" priority="999" constant="150" id="4KH-lR-6nT"/>
                                                 <constraint firstAttribute="width" secondItem="yoh-rK-SAI" secondAttribute="height" multiplier="1:1" id="S1Y-kg-rMc"/>
                                             </constraints>
                                         </imageView>
@@ -306,14 +306,14 @@
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aWM-ez-056">
-                                                    <rect key="frame" x="10" y="10" width="100" height="100.33333333333333"/>
+                                                    <rect key="frame" x="10" y="10" width="100.33333333333333" height="100.33333333333333"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="100" id="HrS-Os-fZy"/>
+                                                        <constraint firstAttribute="width" priority="999" constant="100" id="HrS-Os-fZy"/>
                                                         <constraint firstAttribute="width" secondItem="aWM-ez-056" secondAttribute="height" multiplier="1:1" id="Syt-w0-Tdd"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1aI-DQ-6LG">
-                                                    <rect key="frame" x="120" y="42.333333333333336" width="298" height="36.000000000000007"/>
+                                                    <rect key="frame" x="120.33333333333334" y="42.333333333333336" width="297.66666666666663" height="36.000000000000007"/>
                                                     <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="30"/>
                                                     <color key="textColor" systemColor="systemPurpleColor"/>
                                                     <nil key="highlightedColor"/>
@@ -376,7 +376,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <color key="sectionIndexBackgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="GroupsTableViewCell" id="fMI-e6-5e7" customClass="GroupsTableViewCell" customModule="Social_Network" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="AvaliableGroupsTableViewCell" id="fMI-e6-5e7" customClass="AvaliableGroupsTableViewCell" customModule="Social_Network" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="24.333333969116211" width="428" height="120.33333587646484"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fMI-e6-5e7" id="ggq-sR-l6C">
@@ -384,14 +384,14 @@
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Bes-3k-TCU">
-                                            <rect key="frame" x="10" y="10" width="100" height="100.33333333333333"/>
+                                            <rect key="frame" x="10" y="10" width="100.33333333333333" height="100.33333333333333"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="Bes-3k-TCU" secondAttribute="height" multiplier="1:1" id="8gH-yL-7NZ"/>
-                                                <constraint firstAttribute="width" constant="100" id="V5Y-SV-CYb"/>
+                                                <constraint firstAttribute="width" priority="999" constant="100" id="V5Y-SV-CYb"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gfq-uy-vEt">
-                                            <rect key="frame" x="120" y="42.333333333333336" width="298" height="36.000000000000007"/>
+                                            <rect key="frame" x="120.33333333333334" y="42.333333333333336" width="297.66666666666663" height="36.000000000000007"/>
                                             <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="30"/>
                                             <color key="textColor" systemColor="systemPurpleColor"/>
                                             <nil key="highlightedColor"/>
@@ -408,6 +408,11 @@
                                         <constraint firstItem="gfq-uy-vEt" firstAttribute="centerY" secondItem="Bes-3k-TCU" secondAttribute="centerY" id="kx1-vf-97V"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="avaliableGroupImage" destination="Bes-3k-TCU" id="lC4-j3-8XW"/>
+                                    <outlet property="avaliableGroupName" destination="gfq-uy-vEt" id="pp7-O3-xc2"/>
+                                    <segue destination="ihj-Pa-hPb" kind="unwind" unwindAction="goBackFromAvaliableGroupsScreenWith:" id="ROU-O5-IQu"/>
+                                </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="tS5-KV-Tt7">
                                 <rect key="frame" x="0.0" y="144.66666984558105" width="428" height="43.666667938232422"/>
@@ -424,8 +429,12 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="5Po-of-S3T"/>
+                    <connections>
+                        <outlet property="avaliableGroupsTableView" destination="vUM-in-23f" id="tji-LT-6gG"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7bx-1s-xwK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="ihj-Pa-hPb" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3066" y="437"/>
         </scene>
