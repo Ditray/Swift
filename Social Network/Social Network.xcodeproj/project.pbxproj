@@ -11,6 +11,8 @@
 		494A9BA525EAF4DB00EF07BB /* FriendsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494A9BA425EAF4DB00EF07BB /* FriendsTableViewCell.swift */; };
 		4967C59725EBA02D008579C7 /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4967C59625EBA02D008579C7 /* Friend.swift */; };
 		4967C59A25EBAA29008579C7 /* FriendsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4967C59925EBAA29008579C7 /* FriendsCollectionViewController.swift */; };
+		498069E026BC130C00B11608 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498069DF26BC130C00B11608 /* CircleView.swift */; };
+		498069E226BC312100B11608 /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498069E126BC312100B11608 /* ShadowView.swift */; };
 		499D46DA26B4727F00CCC750 /* GroupsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499D46D926B4727F00CCC750 /* GroupsTableViewController.swift */; };
 		499D46DC26B4736500CCC750 /* GroupsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499D46DB26B4736500CCC750 /* GroupsTableViewCell.swift */; };
 		499D46DE26B4785500CCC750 /* FriendsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499D46DD26B4785500CCC750 /* FriendsCollectionViewCell.swift */; };
@@ -31,6 +33,8 @@
 		494A9BA425EAF4DB00EF07BB /* FriendsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsTableViewCell.swift; sourceTree = "<group>"; };
 		4967C59625EBA02D008579C7 /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
 		4967C59925EBAA29008579C7 /* FriendsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsCollectionViewController.swift; sourceTree = "<group>"; };
+		498069DF26BC130C00B11608 /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
+		498069E126BC312100B11608 /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
 		499D46D926B4727F00CCC750 /* GroupsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsTableViewController.swift; sourceTree = "<group>"; };
 		499D46DB26B4736500CCC750 /* GroupsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsTableViewCell.swift; sourceTree = "<group>"; };
 		499D46DD26B4785500CCC750 /* FriendsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -64,6 +68,15 @@
 				499D46E326B4A1C100CCC750 /* FriendsList */,
 			);
 			path = Friends;
+			sourceTree = "<group>";
+		};
+		498069DE26BC12AD00B11608 /* CustomElements */ = {
+			isa = PBXGroup;
+			children = (
+				498069DF26BC130C00B11608 /* CircleView.swift */,
+				498069E126BC312100B11608 /* ShadowView.swift */,
+			);
+			path = CustomElements;
 			sourceTree = "<group>";
 		};
 		499D46D726B46F1900CCC750 /* Models */ = {
@@ -139,6 +152,7 @@
 		49F5213925D92B4A00747C08 /* Social Network */ = {
 			isa = PBXGroup;
 			children = (
+				498069DE26BC12AD00B11608 /* CustomElements */,
 				499D46D726B46F1900CCC750 /* Models */,
 				49FCD40026B444A900A59F5C /* Scenes */,
 				49F5213A25D92B4A00747C08 /* AppDelegate.swift */,
@@ -246,7 +260,9 @@
 				499D46DE26B4785500CCC750 /* FriendsCollectionViewCell.swift in Sources */,
 				494A9BA225EAEDAF00EF07BB /* FriendsTableViewController.swift in Sources */,
 				49F5213B25D92B4A00747C08 /* AppDelegate.swift in Sources */,
+				498069E026BC130C00B11608 /* CircleView.swift in Sources */,
 				499D46DC26B4736500CCC750 /* GroupsTableViewCell.swift in Sources */,
+				498069E226BC312100B11608 /* ShadowView.swift in Sources */,
 				4967C59A25EBAA29008579C7 /* FriendsCollectionViewController.swift in Sources */,
 				4967C59725EBA02D008579C7 /* Friend.swift in Sources */,
 				494A9BA525EAF4DB00EF07BB /* FriendsTableViewCell.swift in Sources */,
