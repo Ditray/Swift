@@ -8,16 +8,7 @@ class FriendsTableViewController: UIViewController, UITableViewDataSource, UITab
     
     private var reuseID = "FriendsTableViewCell"
     //MARK: - Properties
-    private var friends = [
-        Friend(name:"Boris",avatar: nil),
-        Friend(name:"Andrey", avatar: UIImage(named: "Friend")),
-        Friend(name:"Alexandr", avatar: UIImage(named: "Friend")),
-        Friend(name:"Maxim", avatar: nil),
-        Friend(name:"Arseniy", avatar: nil),
-        Friend(name:"Vladimir", avatar: UIImage(named: "Friend")),
-        Friend(name:"Daniil", avatar: UIImage(named: "Friend")),
-        Friend(name:"Ivan", avatar: nil),
-    ]
+    private var friends = Friend.allFriends
     //MARK: - Functions
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "FriendSegue",

@@ -21,14 +21,7 @@ class GroupsTableViewController: UIViewController, UITableViewDataSource {
     //MARK: - Properties
     private var reuseID = "GroupsTableViewCell"
     
-    private var groups = [
-        Group(name: "Group#1", subscribers: 43, image: UIImage(named: "Image")),
-        Group(name: "Group#2", subscribers: 5254, image: UIImage(named: "Image")),
-        Group(name: "Group#3", subscribers: 345, image: UIImage(named: "Image")),
-        Group(name: "Group#4", subscribers: 123745, image: UIImage(named: "Image")),
-        Group(name: "Group#5", subscribers: 34554, image: nil),
-        Group(name: "Group#6", subscribers: 3453455, image: nil)
-    ]
+    private var groups = Group.allAddedGroups
     //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
