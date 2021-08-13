@@ -13,6 +13,9 @@ class LoginController: UIViewController {
     @IBOutlet var loginField: UITextField!
     @IBOutlet var passwordField: UITextField!
     @IBOutlet var scrollView: UIScrollView!
+    @IBAction func viewTapped(_ sender: UITapGestureRecognizer) {
+    scrollView.endEditing(true)
+}
     @IBAction func button(_ sender: UIButton) {
         performSegue(withIdentifier: "MainSegue", sender:self )
     }
@@ -49,7 +52,4 @@ class LoginController: UIViewController {
             let contentInsets = UIEdgeInsets.zero
             scrollView.contentInset = contentInsets
         }
-    @IBAction func viewTapped(_ sender: UITapGestureRecognizer) {
-        scrollView.endEditing(true)
-    }
 }
