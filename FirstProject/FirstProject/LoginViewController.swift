@@ -7,23 +7,31 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class LoginViewController: UIViewController {
+    let login: String = ""
+    let pass:String = ""
     @IBOutlet weak var loginTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBAction func loginButton(_ sender: UIButton) {
-        if let login = loginTextField.text, login == "some"{
+        if login == loginTextField.text {
             loginTextField.backgroundColor = UIColor.green
         }
         else {
             loginTextField.backgroundColor = UIColor.gray
         }
-        if let pass = passwordTextField.text, pass == "1111"{
+        if pass == passwordTextField.text {
             passwordTextField.backgroundColor = UIColor.green
         }
         else {
             passwordTextField.backgroundColor = UIColor.gray
         }
     }
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        
+        if loginTextField.text == login && passwordTextField.text == pass { return true
+    } else {
+    return false
+    } }
 //    override func viewDidLoad() {
 //        super.viewDidLoad()
 //        // Do any additional setup after loading the view.
