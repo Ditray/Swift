@@ -8,7 +8,7 @@
 import UIKit
 
 class LoginViewController: UIViewController {
-    let login: String = ""
+    let login:String = ""
     let pass:String = ""
     @IBOutlet weak var loginTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -27,11 +27,23 @@ class LoginViewController: UIViewController {
         }
     }
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        
-        if loginTextField.text == login && passwordTextField.text == pass { return true
-    } else {
-    return false
-    } }
+        let Check = CheckUserData()
+        if !Check
+        { showLoginError()}
+        return Check
+    }
+    func CheckUserData() -> Bool {
+        if login == loginTextField.text && pass == passwordTextField.text
+        {return true} else
+        {return false}
+    }
+    func showLoginError() { // Создаем контроллер
+    let alter = UIAlertController(title: "Ошибка", message: "Введены не верные данные пользователя", preferredStyle: .alert)
+    // Создаем кнопку для UIAlertController
+    let action = UIAlertAction(title: "OK", style: .cancel, handler: nil) // Добавляем кнопку на UIAlertController
+    alter.addAction(action)
+    // Показываем UIAlertController
+    present(alter, animated: true, completion: nil) }
 //    override func viewDidLoad() {
 //        super.viewDidLoad()
 //        // Do any additional setup after loading the view.

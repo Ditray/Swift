@@ -14,6 +14,7 @@
 		F62DD41D29004090008FD48C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F62DD41C29004090008FD48C /* Assets.xcassets */; };
 		F62DD42029004090008FD48C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F62DD41E29004090008FD48C /* LaunchScreen.storyboard */; };
 		F64B71D52908173A00A44C6D /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64B71D42908173A00A44C6D /* TabBarController.swift */; };
+		F6FE7D9C290980C8004A8B91 /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FE7D9B290980C8004A8B91 /* FriendsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		F62DD41F29004090008FD48C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F62DD42129004090008FD48C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F64B71D42908173A00A44C6D /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		F6FE7D9B290980C8004A8B91 /* FriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				F62DD41529004090008FD48C /* SceneDelegate.swift */,
 				F62DD41729004090008FD48C /* LoginViewController.swift */,
 				F62DD41929004090008FD48C /* Main.storyboard */,
+				F6FE7D9B290980C8004A8B91 /* FriendsViewController.swift */,
 				F62DD41C29004090008FD48C /* Assets.xcassets */,
 				F62DD41E29004090008FD48C /* LaunchScreen.storyboard */,
 				F62DD42129004090008FD48C /* Info.plist */,
@@ -142,6 +145,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F62DD41829004090008FD48C /* LoginViewController.swift in Sources */,
+				F6FE7D9C290980C8004A8B91 /* FriendsViewController.swift in Sources */,
 				F64B71D52908173A00A44C6D /* TabBarController.swift in Sources */,
 				F62DD41429004090008FD48C /* AppDelegate.swift in Sources */,
 				F62DD41629004090008FD48C /* SceneDelegate.swift in Sources */,
