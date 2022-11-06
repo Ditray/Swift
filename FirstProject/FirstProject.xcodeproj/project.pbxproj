@@ -9,6 +9,13 @@
 /* Begin PBXBuildFile section */
 		F602B69D2912FE1800B6F26D /* FriendsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F602B69C2912FE1800B6F26D /* FriendsCell.swift */; };
 		F602B6A02913049400B6F26D /* Friends.swift in Sources */ = {isa = PBXBuildFile; fileRef = F602B69F2913049400B6F26D /* Friends.swift */; };
+		F612BA0729182643005ABA08 /* FriendPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F612BA0629182643005ABA08 /* FriendPageController.swift */; };
+		F612BA092918265B005ABA08 /* FriendPageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F612BA082918265B005ABA08 /* FriendPageCell.swift */; };
+		F617D981291457B90089FD9A /* GroupsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F617D980291457B90089FD9A /* GroupsViewController.swift */; };
+		F617D986291458830089FD9A /* MyGroupsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F617D985291458830089FD9A /* MyGroupsViewController.swift */; };
+		F617D988291458FA0089FD9A /* GroupsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F617D987291458FA0089FD9A /* GroupsCell.swift */; };
+		F617D98A2914591F0089FD9A /* MyGroupsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F617D9892914591F0089FD9A /* MyGroupsCell.swift */; };
+		F617D98C291468A50089FD9A /* Groups.swift in Sources */ = {isa = PBXBuildFile; fileRef = F617D98B291468A50089FD9A /* Groups.swift */; };
 		F62DD41429004090008FD48C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62DD41329004090008FD48C /* AppDelegate.swift */; };
 		F62DD41629004090008FD48C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62DD41529004090008FD48C /* SceneDelegate.swift */; };
 		F62DD41829004090008FD48C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62DD41729004090008FD48C /* LoginViewController.swift */; };
@@ -22,6 +29,13 @@
 /* Begin PBXFileReference section */
 		F602B69C2912FE1800B6F26D /* FriendsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsCell.swift; sourceTree = "<group>"; };
 		F602B69F2913049400B6F26D /* Friends.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friends.swift; sourceTree = "<group>"; };
+		F612BA0629182643005ABA08 /* FriendPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendPageController.swift; sourceTree = "<group>"; };
+		F612BA082918265B005ABA08 /* FriendPageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendPageCell.swift; sourceTree = "<group>"; };
+		F617D980291457B90089FD9A /* GroupsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsViewController.swift; sourceTree = "<group>"; };
+		F617D985291458830089FD9A /* MyGroupsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGroupsViewController.swift; sourceTree = "<group>"; };
+		F617D987291458FA0089FD9A /* GroupsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsCell.swift; sourceTree = "<group>"; };
+		F617D9892914591F0089FD9A /* MyGroupsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGroupsCell.swift; sourceTree = "<group>"; };
+		F617D98B291468A50089FD9A /* Groups.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Groups.swift; sourceTree = "<group>"; };
 		F62DD41029004090008FD48C /* FirstProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirstProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F62DD41329004090008FD48C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F62DD41529004090008FD48C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -45,14 +59,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		F602B69E2912FE1E00B6F26D /* Friends Branch */ = {
+		F612BA0429181D6D005ABA08 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				F6FE7D9B290980C8004A8B91 /* FriendsViewController.swift */,
-				F602B69C2912FE1800B6F26D /* FriendsCell.swift */,
-				F602B69F2913049400B6F26D /* Friends.swift */,
+				F617D985291458830089FD9A /* MyGroupsViewController.swift */,
+				F617D980291457B90089FD9A /* GroupsViewController.swift */,
+				F612BA0629182643005ABA08 /* FriendPageController.swift */,
 			);
-			path = "Friends Branch";
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		F612BA0529181DA4005ABA08 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F617D987291458FA0089FD9A /* GroupsCell.swift */,
+				F617D9892914591F0089FD9A /* MyGroupsCell.swift */,
+				F602B69C2912FE1800B6F26D /* FriendsCell.swift */,
+				F612BA082918265B005ABA08 /* FriendPageCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F617D982291457BD0089FD9A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F602B69F2913049400B6F26D /* Friends.swift */,
+				F617D98B291468A50089FD9A /* Groups.swift */,
+				F612BA0529181DA4005ABA08 /* View */,
+				F612BA0429181D6D005ABA08 /* Controllers */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		F62DD40729004090008FD48C = {
@@ -77,12 +114,12 @@
 				F62DD41329004090008FD48C /* AppDelegate.swift */,
 				F62DD41529004090008FD48C /* SceneDelegate.swift */,
 				F62DD41729004090008FD48C /* LoginViewController.swift */,
+				F64B71D42908173A00A44C6D /* TabBarController.swift */,
 				F62DD41929004090008FD48C /* Main.storyboard */,
-				F602B69E2912FE1E00B6F26D /* Friends Branch */,
+				F617D982291457BD0089FD9A /* Models */,
 				F62DD41C29004090008FD48C /* Assets.xcassets */,
 				F62DD41E29004090008FD48C /* LaunchScreen.storyboard */,
 				F62DD42129004090008FD48C /* Info.plist */,
-				F64B71D42908173A00A44C6D /* TabBarController.swift */,
 			);
 			path = FirstProject;
 			sourceTree = "<group>";
@@ -158,13 +195,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F617D98A2914591F0089FD9A /* MyGroupsCell.swift in Sources */,
 				F62DD41829004090008FD48C /* LoginViewController.swift in Sources */,
 				F602B6A02913049400B6F26D /* Friends.swift in Sources */,
 				F602B69D2912FE1800B6F26D /* FriendsCell.swift in Sources */,
 				F6FE7D9C290980C8004A8B91 /* FriendsViewController.swift in Sources */,
+				F617D988291458FA0089FD9A /* GroupsCell.swift in Sources */,
+				F617D981291457B90089FD9A /* GroupsViewController.swift in Sources */,
+				F612BA0729182643005ABA08 /* FriendPageController.swift in Sources */,
 				F64B71D52908173A00A44C6D /* TabBarController.swift in Sources */,
+				F617D986291458830089FD9A /* MyGroupsViewController.swift in Sources */,
 				F62DD41429004090008FD48C /* AppDelegate.swift in Sources */,
 				F62DD41629004090008FD48C /* SceneDelegate.swift in Sources */,
+				F612BA092918265B005ABA08 /* FriendPageCell.swift in Sources */,
+				F617D98C291468A50089FD9A /* Groups.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

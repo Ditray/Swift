@@ -9,11 +9,11 @@ import UIKit
 
 class FriendsViewController: UITableViewController {
     let friends = [
-        Friends(image: UIImage.init(systemName: "paperplane.fill"), name:"Богдан"),
-        Friends(name:"Тима"),
-        Friends(name:"Сеня"),
-        Friends(name:"Саня"),
-        Friends(name:"Ваня"),
+        Friends(image: UIImage.init(named: "friend"), name:"Богдан"),
+        Friends(image: UIImage.init(named: "friend"), name:"Тима"),
+        Friends(image: UIImage.init(named: "friend"), name:"Сеня"),
+        Friends(image: UIImage.init(named: "friend"), name:"Саня"),
+        Friends(image: UIImage.init(named: "friend"), name:"Ваня"),
     ]
     // MARK: - Table view data source
     
@@ -33,5 +33,16 @@ class FriendsViewController: UITableViewController {
         cell.labelFriends.text = friends[indexPath.row].name
         cell.imageFriends.image = friends[indexPath.row].image
         return cell
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "favoriteFriend",
+           let destinationVC = segue.destination as? FriendPageController,
+            let indexPath = tableView.indexPathForSelectedRow
+        {
+            let friend = friends[indexPath.row].name
+            destinationVC.title = friend
+            destinationVC.friend = friends[indexPath.row]
+            
+        }
     }
 }

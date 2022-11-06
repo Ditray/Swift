@@ -1,16 +1,16 @@
 //
-//  FriendsCell.swift
+//  GroupsViewCell.swift
 //  FirstProject
 //
-//  Created by Андрей Дитякин on 02.11.2022.
+//  Created by Андрей Дитякин on 03.11.2022.
 //
 
 import UIKit
 
-class FriendsCell: UITableViewCell {
-    @IBOutlet weak var labelFriends: UILabel!
+class GroupsCell: UITableViewCell {
     
-    @IBOutlet weak var imageFriends: UIImageView!
+    @IBOutlet weak var imageGroup: UIImageView!
+    @IBOutlet weak var nameGroup: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
