@@ -10,4 +10,8 @@ import UIKit
 class FriendPageCell: UICollectionViewCell {
     @IBOutlet weak var nameOfFriend:UILabel!
     @IBOutlet weak var imageOfFriend:UIImageView!
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        self.layer.cornerRadius = 10
+    }
 }

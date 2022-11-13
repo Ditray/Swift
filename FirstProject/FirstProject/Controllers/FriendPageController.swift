@@ -9,6 +9,8 @@ import UIKit
 
 class FriendPageController: UICollectionViewController {
     var friend: Friends?
+    // MARK: - Lifecycle
+    
     /*
     // MARK: - Navigation
 
@@ -28,18 +30,26 @@ class FriendPageController: UICollectionViewController {
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
-        return 1
+      return 2
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FriendCellID", for: indexPath) as? FriendPageCell else {
+        if indexPath.row == indexPath.count-2 {
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FriendCellID", for: indexPath) as? FriendPageCell else {
             preconditionFailure("FriendPageCell cannot")
             
         }
-        cell.imageOfFriend.image = friend?.image
-        cell.nameOfFriend.text = "Тоже " + (friend?.name ?? "")
-        return cell
+            cell.imageOfFriend.image = friend?.image
+            cell.nameOfFriend.text = "Тоже " + (friend?.name ?? "")
+            return cell
+        } else {
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ContentFriendPageID", for: indexPath) as? ContentFriendPageCell else {
+                preconditionFailure("ContentFriendPageCell cannot")
+            }
+            // castomize contentCell
+            return cell
+        }
     }
+    
 
 }
