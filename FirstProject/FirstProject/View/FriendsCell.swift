@@ -12,17 +12,16 @@ class FriendsCell: UITableViewCell {
     @IBOutlet weak var imageFriends: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.layer.cornerRadius = 30
-        backgroundColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
+        self.layer.cornerRadius = 10
+        backgroundColor = #colorLiteral(red: 0.3882353008, green: 0.3882353008, blue: 0.3882353306, alpha: 1)
     }
-
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         if selected == true{
             backgroundColor = #colorLiteral(red: 0.3333333433, green: 0.3333333433, blue: 0.3333333433, alpha: 1)
         }
         if selected == false {
-            backgroundColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
+            backgroundColor = #colorLiteral(red: 0.3882353008, green: 0.3882353008, blue: 0.3882353306, alpha: 1)
         }
     }
 
