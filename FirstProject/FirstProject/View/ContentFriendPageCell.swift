@@ -8,9 +8,11 @@
 import UIKit
 
 class ContentFriendPageCell: UICollectionViewCell {
+    @IBOutlet weak var imageContent: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         self.layer.cornerRadius = 10
+        self.imageContent?.layer.cornerRadius = 10
         }
     
 }

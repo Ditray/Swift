@@ -154,7 +154,7 @@
                                             </constraints>
                                         </view>
                                     </subviews>
-                                    <color key="backgroundColor" red="0.42949287854519091" green="0.42949287854519091" blue="0.42949287854519091" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="backgroundColor" red="0.43137254901960786" green="0.43137254901960786" blue="0.43137254901960786" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <constraints>
                                         <constraint firstItem="Fh6-IK-Joz" firstAttribute="centerX" secondItem="Y0h-9k-9fc" secondAttribute="centerX" id="7dw-yq-BmQ"/>
                                         <constraint firstItem="qzV-Og-Yt5" firstAttribute="leading" secondItem="1R3-Wb-CtK" secondAttribute="leading" constant="100" id="DJV-9N-hl9"/>
@@ -171,24 +171,28 @@
                                 </connections>
                             </collectionViewCell>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ContentFriendPageID" id="Aym-Jl-C7Z" customClass="ContentFriendPageCell" customModule="FirstProject" customModuleProvider="target">
-                                <rect key="frame" x="45" y="198.66666666666666" width="300" height="470"/>
+                                <rect key="frame" x="45" y="198.66666666666666" width="300" height="150"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="c0T-TG-tF1" customClass="ContentFriendPageCell" customModule="FirstProject" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="300" height="470"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="300" height="150"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VwJ-x5-DiZ">
-                                            <rect key="frame" x="10" y="10" width="280" height="410"/>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VwJ-x5-DiZ">
+                                            <rect key="frame" x="10" y="10" width="280" height="90"/>
                                             <constraints>
+                                                <constraint firstAttribute="height" relation="lessThanOrEqual" constant="200" id="L6j-Tk-ArX"/>
                                                 <constraint firstAttribute="width" constant="280" id="MhS-fW-5Pe"/>
                                             </constraints>
                                         </imageView>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SL0-A6-lfr" customClass="LikeControl" customModule="FirstProject" customModuleProvider="target">
-                                            <rect key="frame" x="10" y="430" width="30" height="30"/>
+                                            <rect key="frame" x="10" y="110" width="30" height="30"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hand.thumbsup" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Pcn-9d-vW0">
                                                     <rect key="frame" x="0.0" y="-0.33333333333333215" width="30" height="30"/>
                                                     <color key="tintColor" systemColor="systemGray5Color"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="29.999999999999996" id="tLa-tz-RTu"/>
+                                                    </constraints>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
@@ -205,7 +209,7 @@
                                             </connections>
                                         </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gbE-mN-izX">
-                                            <rect key="frame" x="50" y="435" width="10.333333333333336" height="20.333333333333314"/>
+                                            <rect key="frame" x="50" y="115" width="10.333333333333336" height="20.333333333333343"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" systemColor="systemGray5Color"/>
                                             <nil key="highlightedColor"/>
@@ -223,7 +227,9 @@
                                         <constraint firstItem="gbE-mN-izX" firstAttribute="centerY" secondItem="SL0-A6-lfr" secondAttribute="centerY" id="mN1-1U-boa"/>
                                     </constraints>
                                 </collectionViewCellContentView>
-                                <size key="customSize" width="300" height="470"/>
+                                <connections>
+                                    <outlet property="imageContent" destination="VwJ-x5-DiZ" id="lA6-vt-Wna"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -241,14 +247,17 @@
         <scene sceneID="bys-c5-Ord">
             <objects>
                 <tabBarController id="OHI-4I-p5M" sceneMemberID="viewController">
+                    <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <navigationItem key="navigationItem" id="zLc-v5-FtO"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="VXB-LK-OtD">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="YlQ-k9-9hv" kind="relationship" relationship="viewControllers" id="hM5-6r-IJ1"/>
+                        <segue destination="xix-zd-Kpu" kind="relationship" relationship="viewControllers" id="hwV-Lw-7xg"/>
                         <segue destination="jbF-vn-PDW" kind="relationship" relationship="viewControllers" id="TaQ-v2-gIp"/>
                     </connections>
                 </tabBarController>
@@ -262,11 +271,14 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="YlQ-k9-9hv" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Friends" image="person.2.fill" catalog="system" id="9df-Av-toy"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="6lv-F6-BKP">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="6lv-F6-BKP">
                         <rect key="frame" x="0.0" y="47" width="390" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="Pn7-9k-wUw">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="bMs-2g-hbu" kind="relationship" relationship="rootViewController" id="TVg-RB-GVy"/>
                     </connections>
@@ -279,11 +291,11 @@
         <scene sceneID="6I9-Im-hVX">
             <objects>
                 <tableViewController id="bMs-2g-hbu" customClass="FriendsViewController" customModule="FirstProject" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="9iV-bX-49j">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" id="9iV-bX-49j">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="separatorColor" systemColor="tintColor"/>
+                        <color key="separatorColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="firstCellPrototipe" rowHeight="100" id="Wit-zF-5ke" customClass="FriendsCell" customModule="FirstProject" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="50" width="390" height="100"/>
@@ -374,6 +386,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zgR-74-Sge" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4600" y="340.521327014218"/>
+        </scene>
+        <!--News-->
+        <scene sceneID="riE-Yt-Y4W">
+            <objects>
+                <tableViewController id="xix-zd-Kpu" customClass="NewsViewController" customModule="FirstProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="iyA-QK-O2x">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <connections>
+                            <outlet property="dataSource" destination="xix-zd-Kpu" id="ZsL-H0-akP"/>
+                            <outlet property="delegate" destination="xix-zd-Kpu" id="04R-5H-I4j"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="News" image="newspaper" catalog="system" id="hDU-Zc-IA9"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dPz-3v-0p4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4600" y="1003"/>
         </scene>
         <!--My Groups View Controller-->
         <scene sceneID="H5a-92-TGx">
@@ -505,6 +536,7 @@
     </scenes>
     <resources>
         <image name="hand.thumbsup" catalog="system" width="123" height="128"/>
+        <image name="newspaper" catalog="system" width="128" height="111"/>
         <image name="person.2.fill" catalog="system" width="128" height="81"/>
         <image name="person.3.sequence.fill" catalog="system" width="128" height="59"/>
         <systemColor name="labelColor">
@@ -515,9 +547,6 @@
         </systemColor>
         <systemColor name="systemGray5Color">
             <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="tintColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
