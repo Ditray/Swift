@@ -29,9 +29,11 @@ class LikeControl: UIControl {
         stateTap?.toggle()
         if stateTap == true {
             likeImage.image = UIImage(systemName: "hand.thumbsup.fill")
-            counterLabel.text = "\(Int(counter)+1)"
+        counter = counter + 1
+            counterLabel.text = "\(Int(counter))"
         } else {
             likeImage.image = UIImage(systemName: "hand.thumbsup")
+            counter = counter - 1
             counterLabel.text = "\(Int(counter))"
         }
     }

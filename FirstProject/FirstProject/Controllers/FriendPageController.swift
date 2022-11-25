@@ -46,7 +46,7 @@ class FriendPageController: UICollectionViewController {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ContentFriendPageID", for: indexPath) as? ContentFriendPageCell else {
                 preconditionFailure("ContentFriendPageCell cannot")
             }
-            // castomize contentCell
+            cell.imageContent.image = friend?.image
             return cell
         }
     }

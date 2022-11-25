@@ -13,7 +13,8 @@ class FriendsCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         self.layer.cornerRadius = 10
-        backgroundColor = #colorLiteral(red: 0.3882353008, green: 0.3882353008, blue: 0.3882353306, alpha: 1)
+        let extractedExpr = #colorLiteral(red: 0.431372549, green: 0.431372549, blue: 0.431372549, alpha: 1)
+        backgroundColor = extractedExpr
     }
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
@@ -21,7 +22,7 @@ class FriendsCell: UITableViewCell {
             backgroundColor = #colorLiteral(red: 0.3333333433, green: 0.3333333433, blue: 0.3333333433, alpha: 1)
         }
         if selected == false {
-            backgroundColor = #colorLiteral(red: 0.3882353008, green: 0.3882353008, blue: 0.3882353306, alpha: 1)
+            backgroundColor = #colorLiteral(red: 0.431372549, green: 0.431372549, blue: 0.431372549, alpha: 1)
         }
     }
 
