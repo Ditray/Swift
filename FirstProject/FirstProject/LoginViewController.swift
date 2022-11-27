@@ -27,6 +27,9 @@ class LoginViewController: UIViewController {
             passwordTextField.backgroundColor = UIColor.gray
         }
     }
+    
+    
+    
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         let Check = CheckUserData()
         if !Check
@@ -45,10 +48,12 @@ class LoginViewController: UIViewController {
     alter.addAction(action)
     // Показываем UIAlertController
     present(alter, animated: true, completion: nil) }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
+    
     // Когда клавиатура появляется
     @objc func keyboardWasShown(notification: Notification) {
             // Получаем размер клавиатуры
@@ -67,9 +72,6 @@ class LoginViewController: UIViewController {
             // Второе — когда она пропадает
     NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillBeHidden(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
-
-
-    
 
 }
 

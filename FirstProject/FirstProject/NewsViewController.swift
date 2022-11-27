@@ -8,8 +8,16 @@
 import UIKit
 
 class NewsViewController: UITableViewController {
+    @IBAction func like(_ sender: UIButton) {
+        if sender.isSelected == true {
+            sender.titleLabel?.text = "1"
+            sender.backgroundColor = .blue
+        } else {
+            sender.titleLabel?.text = "0"
+        }
+    }
     let news = [
-        News(avatar:UIImage(named: "friend"), name: "Петр", text: "Все заголовки в навигаторе поиска Xcode могут быть изменены: Find можно «Заменить», Text может быть ссылкой или регулярным выражением, а Containing может быть сопоставлением, запуском и т. д. Вы также можете щелкнуть увеличительное стекло, чтобы просмотреть недавние поисковые запросы — при выборе одного из них он повторяется.", images: [UIImage(named: "1"), UIImage(named: "2")])
+        News(avatar:UIImage(named: "friend"), name: "Петр", text: "Все заголовки в навигаторе поиска Xcode могут быть изменены: Find можно «Заменить», Text может быть ссылкой или регулярным выражением, а Containing может быть сопоставлением, запуском и т. д. Вы также можете щелкнуть увеличительное стекло, чтобы просмотреть недавние поисковые запросы — при выборе одного из них он повторяется.", images: UIImage(named: "1"))
     ]
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,7 +46,7 @@ class NewsViewController: UITableViewController {
         cell.nameLabel.text = news[indexPath.row].name
         cell.avatarView.image = news[indexPath.row].avatar
         cell.contentLabel.text = news[indexPath.row].text
-        
+        cell.galleryImage.image = news[indexPath.row].images
         return cell
     }
 

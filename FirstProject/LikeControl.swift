@@ -28,7 +28,11 @@ class LikeControl: UIControl {
     @objc private func tapDone (_ tap: UITapGestureRecognizer) {
         stateTap?.toggle()
         if stateTap == true {
-            likeImage.image = UIImage(systemName: "hand.thumbsup.fill")
+            UIView.animate(withDuration: 1) {
+
+                self.likeImage.image = UIImage(systemName: "hand.thumbsup.fill")
+            }
+//            likeImage.image = UIImage(systemName: "hand.thumbsup.fill")
         counter = counter + 1
             counterLabel.text = "\(Int(counter))"
         } else {
