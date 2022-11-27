@@ -10,8 +10,8 @@ class News{
     let avatar: UIImage?
     let name: String
     let text: String
-    let images: Any
-    init(avatar: UIImage? = nil, name: String, text: String, images: Any) {
+    let images: UIImage?
+    init(avatar: UIImage? = nil, name: String, text: String, images: UIImage?) {
         self.avatar = avatar
         self.name = name
         self.text = text

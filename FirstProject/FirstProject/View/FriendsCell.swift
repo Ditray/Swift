@@ -8,6 +8,8 @@
 import UIKit
 
 class FriendsCell: UITableViewCell {
+    @IBOutlet weak var roundedView: RoundedView!
+    @IBOutlet weak var shadowView: ShadowView!
     @IBOutlet weak var labelFriends: UILabel!
     @IBOutlet weak var imageFriends: UIImageView!
     override func awakeFromNib() {

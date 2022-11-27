@@ -94,6 +94,89 @@
             </objects>
             <point key="canvasLocation" x="2923.0769230769229" y="3.5545023696682461"/>
         </scene>
+        <!--Anim View Controller-->
+        <scene sceneID="s3f-DX-9xR">
+            <objects>
+                <viewController id="jZw-sA-hKr" customClass="AnimViewController" customModule="FirstProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="w0p-bJ-3JF">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BjT-gL-XGX">
+                                <rect key="frame" x="170" y="397" width="50" height="50"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="aX3-Pb-HbU"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <integer key="value" value="25"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pI3-vO-Ohm">
+                                <rect key="frame" x="145" y="593" width="100" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="0XD-rP-cGq"/>
+                                    <constraint firstAttribute="width" secondItem="pI3-vO-Ohm" secondAttribute="height" multiplier="20:7" id="882-CP-KUq"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="button:" destination="jZw-sA-hKr" eventType="touchUpInside" id="YL3-6J-dRc"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TSn-FD-Ua7">
+                                <rect key="frame" x="90" y="397" width="50" height="50"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="TSn-FD-Ua7" secondAttribute="height" multiplier="1:1" id="82y-lk-VdD"/>
+                                    <constraint firstAttribute="height" constant="50" id="eJu-pi-txg"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <integer key="value" value="25"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qAE-fG-AsO">
+                                <rect key="frame" x="250" y="397" width="50" height="50"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Q2x-RR-4uH"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <integer key="value" value="25"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Mwi-ZD-2Ze"/>
+                        <color key="backgroundColor" systemColor="systemBrownColor"/>
+                        <constraints>
+                            <constraint firstItem="pI3-vO-Ohm" firstAttribute="centerX" secondItem="BjT-gL-XGX" secondAttribute="centerX" id="7Fe-48-tMc"/>
+                            <constraint firstItem="BjT-gL-XGX" firstAttribute="centerX" secondItem="w0p-bJ-3JF" secondAttribute="centerX" id="BCP-X4-XRv"/>
+                            <constraint firstItem="BjT-gL-XGX" firstAttribute="width" secondItem="BjT-gL-XGX" secondAttribute="height" multiplier="1:1" id="HAy-2U-6Xt"/>
+                            <constraint firstItem="TSn-FD-Ua7" firstAttribute="centerY" secondItem="BjT-gL-XGX" secondAttribute="centerY" id="QbG-dh-6W1"/>
+                            <constraint firstItem="qAE-fG-AsO" firstAttribute="width" secondItem="qAE-fG-AsO" secondAttribute="height" multiplier="1:1" id="SkP-y3-ODl"/>
+                            <constraint firstItem="qAE-fG-AsO" firstAttribute="leading" secondItem="BjT-gL-XGX" secondAttribute="trailing" constant="30" id="WOX-g5-IfQ"/>
+                            <constraint firstItem="qAE-fG-AsO" firstAttribute="centerY" secondItem="BjT-gL-XGX" secondAttribute="centerY" id="fVM-Fd-2j3"/>
+                            <constraint firstItem="pI3-vO-Ohm" firstAttribute="top" secondItem="BjT-gL-XGX" secondAttribute="bottom" constant="146" id="iGK-oC-eTj"/>
+                            <constraint firstItem="BjT-gL-XGX" firstAttribute="centerY" secondItem="w0p-bJ-3JF" secondAttribute="centerY" id="rJs-II-ahU"/>
+                            <constraint firstItem="BjT-gL-XGX" firstAttribute="leading" secondItem="TSn-FD-Ua7" secondAttribute="trailing" constant="30" id="sgS-CI-GRT"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="loading1" destination="TSn-FD-Ua7" id="Ign-eB-kdN"/>
+                        <outlet property="loading2" destination="BjT-gL-XGX" id="8AS-oM-4Oz"/>
+                        <outlet property="loading3" destination="qAE-fG-AsO" id="DHa-he-b8v"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7u2-mJ-etp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2923" y="683"/>
+        </scene>
         <!--Friend Page Controller-->
         <scene sceneID="ZFT-To-Umr">
             <objects>
@@ -353,6 +436,8 @@
                                 <connections>
                                     <outlet property="imageFriends" destination="jxN-XA-qKu" id="FiE-19-rYP"/>
                                     <outlet property="labelFriends" destination="Dca-qj-JQ1" id="UIw-7c-7Iz"/>
+                                    <outlet property="roundedView" destination="8hi-32-WJ5" id="80Y-bL-75f"/>
+                                    <outlet property="shadowView" destination="UA9-FQ-oyJ" id="Z2y-2S-0fA"/>
                                     <segue destination="beb-So-Ltb" kind="show" identifier="favoriteFriend" id="6VJ-bC-VM4"/>
                                 </connections>
                             </tableViewCell>
@@ -544,6 +629,9 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBrownColor">
+            <color red="0.63529411764705879" green="0.51764705882352946" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray5Color">
             <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
