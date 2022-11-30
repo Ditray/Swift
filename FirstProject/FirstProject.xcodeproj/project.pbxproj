@@ -30,6 +30,7 @@
 		F62DD41B29004090008FD48C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F62DD41929004090008FD48C /* Main.storyboard */; };
 		F62DD41D29004090008FD48C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F62DD41C29004090008FD48C /* Assets.xcassets */; };
 		F62DD42029004090008FD48C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F62DD41E29004090008FD48C /* LaunchScreen.storyboard */; };
+		F63EA66A2937E7670044076E /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63EA6692937E7670044076E /* Session.swift */; };
 		F64B71D52908173A00A44C6D /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64B71D42908173A00A44C6D /* TabBarController.swift */; };
 		F6CACF002932CA460060413B /* AnimViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CACEFF2932CA460060413B /* AnimViewController.swift */; };
 		F6FE7D9C290980C8004A8B91 /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FE7D9B290980C8004A8B91 /* FriendsViewController.swift */; };
@@ -61,6 +62,7 @@
 		F62DD41C29004090008FD48C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F62DD41F29004090008FD48C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F62DD42129004090008FD48C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F63EA6692937E7670044076E /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		F64B71D42908173A00A44C6D /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		F6CACEFF2932CA460060413B /* AnimViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimViewController.swift; sourceTree = "<group>"; };
 		F6FE7D9B290980C8004A8B91 /* FriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 				F62DD41729004090008FD48C /* LoginViewController.swift */,
 				F64B71D42908173A00A44C6D /* TabBarController.swift */,
 				F62DD41929004090008FD48C /* Main.storyboard */,
+				F63EA6692937E7670044076E /* Session.swift */,
 				F6CACEFF2932CA460060413B /* AnimViewController.swift */,
 				F612BA0429181D6D005ABA08 /* Controllers */,
 				F612BA0529181DA4005ABA08 /* View */,
@@ -242,6 +245,7 @@
 				F62525322920669800C357D9 /* ContentFriendPageCell.swift in Sources */,
 				F612BA092918265B005ABA08 /* FriendPageCell.swift in Sources */,
 				F625252A2920238D00C357D9 /* RoundedView.swift in Sources */,
+				F63EA66A2937E7670044076E /* Session.swift in Sources */,
 				F62525282920158E00C357D9 /* ShadowView.swift in Sources */,
 				F617D2BC2931345B004EA17D /* News.swift in Sources */,
 				F617D98C291468A50089FD9A /* Groups.swift in Sources */,

@@ -45,8 +45,8 @@
                                             <segue destination="OHI-4I-p5M" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="pn1-8Q-6Y3"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FirstProject" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ehN-1n-e4I">
-                                        <rect key="frame" x="76.000000000000014" y="50" width="238.33333333333337" height="62"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VK" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ehN-1n-e4I">
+                                        <rect key="frame" x="168.33333333333334" y="50" width="53.333333333333343" height="62"/>
                                         <fontDescription key="fontDescription" name="Impact" family="Impact" pointSize="50"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
