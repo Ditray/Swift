@@ -9,6 +9,7 @@ import UIKit
 
 class FriendPageController: UICollectionViewController {
     var friend: Friends?
+    let photosArray: [UIImage] = [UIImage(named: "1")!,UIImage(named: "2")!,UIImage(named: "3")!]
     // MARK: - Lifecycle
     
     /*
@@ -21,7 +22,7 @@ class FriendPageController: UICollectionViewController {
     }
     */
 
-    // MARK: UICollectionViewDataSource
+    // MARK: - UICollectionViewDataSource
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections
@@ -34,7 +35,7 @@ class FriendPageController: UICollectionViewController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if indexPath.row == indexPath.count-2 {
+        if indexPath.row == 0 {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FriendCellID", for: indexPath) as? FriendPageCell else {
             preconditionFailure("FriendPageCell cannot")
             
@@ -46,10 +47,14 @@ class FriendPageController: UICollectionViewController {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ContentFriendPageID", for: indexPath) as? ContentFriendPageCell else {
                 preconditionFailure("ContentFriendPageCell cannot")
             }
-            cell.imageContent.image = friend?.image
             return cell
         }
     }
-    
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toPhotos",
+           let destinationVC = segue.destination as? PhotoViewController
+        {
+            destinationVC.photos = photosArray
+        }
+    }
 }

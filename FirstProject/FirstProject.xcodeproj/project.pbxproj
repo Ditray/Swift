@@ -32,6 +32,8 @@
 		F62DD42029004090008FD48C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F62DD41E29004090008FD48C /* LaunchScreen.storyboard */; };
 		F63EA66A2937E7670044076E /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63EA6692937E7670044076E /* Session.swift */; };
 		F64B71D52908173A00A44C6D /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64B71D42908173A00A44C6D /* TabBarController.swift */; };
+		F6A5B0DC293BE96C00561441 /* PhotosCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A5B0DB293BE96C00561441 /* PhotosCVCell.swift */; };
+		F6A5B0DE293BFC9A00561441 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A5B0DD293BFC9A00561441 /* PhotoViewController.swift */; };
 		F6CACF002932CA460060413B /* AnimViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CACEFF2932CA460060413B /* AnimViewController.swift */; };
 		F6FE7D9C290980C8004A8B91 /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FE7D9B290980C8004A8B91 /* FriendsViewController.swift */; };
 /* End PBXBuildFile section */
@@ -64,6 +66,8 @@
 		F62DD42129004090008FD48C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F63EA6692937E7670044076E /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		F64B71D42908173A00A44C6D /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		F6A5B0DB293BE96C00561441 /* PhotosCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCVCell.swift; sourceTree = "<group>"; };
+		F6A5B0DD293BFC9A00561441 /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 		F6CACEFF2932CA460060413B /* AnimViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimViewController.swift; sourceTree = "<group>"; };
 		F6FE7D9B290980C8004A8B91 /* FriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -84,9 +88,10 @@
 			children = (
 				F617D2B92931315D004EA17D /* NewsViewController.swift */,
 				F6FE7D9B290980C8004A8B91 /* FriendsViewController.swift */,
+				F612BA0629182643005ABA08 /* FriendPageController.swift */,
+				F6A5B0DD293BFC9A00561441 /* PhotoViewController.swift */,
 				F617D985291458830089FD9A /* MyGroupsViewController.swift */,
 				F617D980291457B90089FD9A /* GroupsViewController.swift */,
-				F612BA0629182643005ABA08 /* FriendPageController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -104,6 +109,7 @@
 				F602B69C2912FE1800B6F26D /* FriendsCell.swift */,
 				F612BA082918265B005ABA08 /* FriendPageCell.swift */,
 				F62525312920669800C357D9 /* ContentFriendPageCell.swift */,
+				F6A5B0DB293BE96C00561441 /* PhotosCVCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -229,10 +235,12 @@
 				F617D98A2914591F0089FD9A /* MyGroupsCell.swift in Sources */,
 				F62DD41829004090008FD48C /* LoginViewController.swift in Sources */,
 				F602B6A02913049400B6F26D /* Friends.swift in Sources */,
+				F6A5B0DC293BE96C00561441 /* PhotosCVCell.swift in Sources */,
 				F602B69D2912FE1800B6F26D /* FriendsCell.swift in Sources */,
 				F6FE7D9C290980C8004A8B91 /* FriendsViewController.swift in Sources */,
 				F617D988291458FA0089FD9A /* GroupsCell.swift in Sources */,
 				F617D981291457B90089FD9A /* GroupsViewController.swift in Sources */,
+				F6A5B0DE293BFC9A00561441 /* PhotoViewController.swift in Sources */,
 				F617D2BA2931315D004EA17D /* NewsViewController.swift in Sources */,
 				F612BA0729182643005ABA08 /* FriendPageController.swift in Sources */,
 				F6CACF002932CA460060413B /* AnimViewController.swift in Sources */,

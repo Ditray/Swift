@@ -64,7 +64,9 @@ class LoginViewController: UIViewController {
     self.scrollView?.contentInset = contentInsets
     scrollView?.scrollIndicatorInsets = contentInsets }
         //Когда клавиатура исчезает
-    @objc func keyboardWillBeHidden(notification: Notification) { // Устанавливаем отступ внизу UIScrollView, равный 0 let contentInsets = UIEdgeInsets.zero scrollView?.contentInset = contentInsets
+    @objc func keyboardWillBeHidden(notification: Notification) {
+        let contentInsets = UIEdgeInsets.zero
+        scrollView?.contentInset = contentInsets
     }
     override func viewWillAppear(_ animated: Bool) { super.viewWillAppear(animated)
             // Подписываемся на два уведомления: одно приходит при появлении клавиатуры

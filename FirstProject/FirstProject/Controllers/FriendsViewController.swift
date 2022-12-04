@@ -89,8 +89,6 @@ class FriendsViewController: UITableViewController {
            let destinationVC = segue.destination as? FriendPageController,
             let indexPath = tableView.indexPathForSelectedRow
         {
-            let friend = friends[indexPath.row].name
-            destinationVC.title = friend
             destinationVC.friend = friends[indexPath.row]
             
         }
