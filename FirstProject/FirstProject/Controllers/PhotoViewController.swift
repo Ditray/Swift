@@ -36,14 +36,14 @@ class PhotoViewController: UIViewController {
             const = -padding
             
         }
-        UIView.animateKeyframes(withDuration: 0.8,
+        UIView.animateKeyframes(withDuration: 0.6,
                                 delay: 0) {
             UIView.addKeyframe(withRelativeStartTime: 0,
                                relativeDuration: 0.3) {
-                self.photoView.transform = CGAffineTransformMakeScale(0.5, 0.5)
+                self.photoView.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
             }
             UIView.addKeyframe(withRelativeStartTime: 0.3,
-                               relativeDuration: 0.5) {
+                               relativeDuration: 0.3) {
                 self.photoView.transform = CGAffineTransform(translationX: const, y: 0)
             }
             
@@ -62,14 +62,14 @@ class PhotoViewController: UIViewController {
                
            }
         
-           UIView.animateKeyframes(withDuration: 0.8,
+           UIView.animateKeyframes(withDuration: 0.6,
                                 delay: 0) {
             UIView.addKeyframe(withRelativeStartTime: 0,
                                relativeDuration: 0.3) {
-                self.photoView.transform = CGAffineTransformMakeScale(0.5, 0.5)
+                self.photoView.transform = CGAffineTransformMakeScale(0.8, 0.8)
             }
                UIView.addKeyframe(withRelativeStartTime: 0.3,
-                                  relativeDuration: 0.5) {
+                                  relativeDuration: 0.3) {
                 self.photoView.transform = CGAffineTransform(translationX:const, y: 0)
             }
         }

@@ -421,7 +421,7 @@
         <!--Friends-->
         <scene sceneID="NFo-Xw-wVp">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="YlQ-k9-9hv" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="YlQ-k9-9hv" customClass="NavigationController" customModule="FirstProject" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Friends" image="person.2.fill" catalog="system" id="9df-Av-toy"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="6lv-F6-BKP">
@@ -526,7 +526,7 @@
         <!--Groups-->
         <scene sceneID="BpV-sD-puz">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jbF-vn-PDW" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jbF-vn-PDW" customClass="NavigationController" customModule="FirstProject" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Groups" image="person.3.sequence.fill" catalog="system" id="CvC-6U-j4r"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Rus-42-NkS">
