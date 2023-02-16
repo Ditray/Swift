@@ -21,15 +21,13 @@ final class LoginViewController: UIViewController {
 extension LoginViewController: WKNavigationDelegate {
     
     func webView(_ webView: WKWebView, decidePolicyFor navigationResponse: WKNavigationResponse, decisionHandler: @escaping (WKNavigationResponsePolicy) -> Void) {
-        
-        guard
+                guard
             let url = navigationResponse.response.url,
             url.path == "/blank.html",
             let fragment = url.fragment() else {
             decisionHandler(.allow)
             return
         }
-        
         let params = fragment
             .components(separatedBy: "&")
             .map {$0.components(separatedBy: "=")}
@@ -73,6 +71,7 @@ extension LoginViewController: WKNavigationDelegate {
                  
                  let request = URLRequest(url: urlComponents.url!)
                  webView.load(request)
+         
 
 
      }

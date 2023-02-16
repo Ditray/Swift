@@ -18,6 +18,7 @@ class FriendsViewController: UITableViewController {
     var sortedFriends = [Character:[Friends]]()
     override func viewDidLoad() {
         super.viewDidLoad()
+        getFriends()
         self.sortedFriends = sort(friends: friends)
     }
     private func sort(friends:[Friends])-> [Character:[Friends]]{
@@ -93,4 +94,32 @@ class FriendsViewController: UITableViewController {
             
         }
     }
+    
+    func getFriends() {
+        var urlComponentsOfFriends = URLComponents()
+            urlComponentsOfFriends.scheme = "https"
+            urlComponentsOfFriends.host = "api.vk.com"
+            urlComponentsOfFriends.path = "/method/friends.get"
+            urlComponentsOfFriends.queryItems = [
+                    URLQueryItem(name: "access_token", value: String(Session.shared.token)),
+                    URLQueryItem(name: "fields", value: "photo_50"),
+                    URLQueryItem(name: "lang", value: "en"),
+                    URLQueryItem(name: "count", value: "100"),
+                    URLQueryItem(name: "v", value: "5.89")
+                ]
+        let request = URLRequest(url: urlComponentsOfFriends.url!)
+        let urlSession = URLSession.shared
+        let task = urlSession.dataTask(with: request) { (data, response, error) -> Void in
+            if let error = error {
+                print(error)
+                return
+            } else {
+                let json = try? JSONSerialization.jsonObject(with: data!, options: .fragmentsAllowed)
+                print(json)
+            }
+        }
+        
+        task.resume()
+    }
+   
 }

@@ -16,6 +16,13 @@ class MyGroupsViewController: UITableViewController {
         Groups(image: UIImage.init(systemName: "paperplane.fill"), name: "семья"),
         Groups(image: UIImage.init(systemName: "paperplane.fill"), name: "приколы")
         ]
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        getGroups()
+    }
+    
     @IBAction func addGroup(segue: UIStoryboardSegue) {
         if segue.identifier == "addGroup" {
             guard let GroupsViewController = segue.source as? GroupsViewController else {return}
@@ -58,30 +65,31 @@ class MyGroupsViewController: UITableViewController {
 
         }    
     }
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
+    func getGroups() {
+        var urlComponentsOfFriends = URLComponents()
+            urlComponentsOfFriends.scheme = "https"
+            urlComponentsOfFriends.host = "api.vk.com"
+            urlComponentsOfFriends.path = "/method/groups.get"
+            urlComponentsOfFriends.queryItems = [
+                    URLQueryItem(name: "access_token", value: String(Session.shared.token)),
+                    URLQueryItem(name: "extended", value: "1"),
+                    URLQueryItem(name: "lang", value: "0"),
+                    URLQueryItem(name: "fields", value: "city, country, place, description, wiki_page, members_count, counters, start_date, finish_date"),
+                    URLQueryItem(name: "count", value: "50"),
+                    URLQueryItem(name: "v", value: "5.81")
+                ]
+        let request = URLRequest(url: urlComponentsOfFriends.url!)
+        let urlSession = URLSession.shared
+        let task = urlSession.dataTask(with: request) { (data, response, error) -> Void in
+            if let error = error {
+                print(error)
+                return
+            } else {
+                let json = try? JSONSerialization.jsonObject(with: data!, options: .fragmentsAllowed)
+                print(json)
+            }
+        }
+        
+        task.resume()
     }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
-}
+   }
