@@ -22,11 +22,11 @@ class GroupsViewController: UITableViewController {
     ]
     var filteredGroups = [Groups]()
     var isSearching = false
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.searchBar.delegate = self
+        
     }
     // MARK: - Table view data source
 
@@ -71,7 +71,7 @@ extension GroupsViewController: UISearchBarDelegate {
             print("Empty Search")
             return
         }
-        
+        searchGroup(q: searchText)
         for item in groups {
             let text = searchText.lowercased()
             let isArrayContain = item.name?.lowercased().ranges(of: text)
@@ -86,5 +86,31 @@ extension GroupsViewController: UISearchBarDelegate {
             isSearching = true
             tableView.reloadData()
         }
+    }
+    
+    func searchGroup(q:String)  {
+        
+        var urlComponents = URLComponents()
+        urlComponents.scheme = "https"
+        urlComponents.host = "api.vk.com"
+        urlComponents.path = "/method/groups.search"
+        urlComponents.queryItems = [
+            URLQueryItem(name: "access_token", value: String(Session.shared.token)),
+            URLQueryItem(name: "q", value:"\(q)" ),
+            URLQueryItem(name: "v", value: "5.131")
+            
+        ]
+        let request = URLRequest(url: urlComponents.url!)
+        let urlSession = URLSession.shared
+        let task = urlSession.dataTask(with: request) { (data, response, error) -> Void in
+            if let error = error {
+                print(error)
+                return
+            } else {
+                let json = try? JSONSerialization.jsonObject(with: data!, options: .fragmentsAllowed)
+                print(json)
+            }
+        }
+        task.resume()
     }
 }
