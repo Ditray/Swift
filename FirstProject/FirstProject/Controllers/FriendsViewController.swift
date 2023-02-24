@@ -8,26 +8,17 @@
 import UIKit
 
 class FriendsViewController: UITableViewController {
-    let friends = [
-        Friends(image: UIImage.init(named: "friend"), name:"Богдан"),
-        Friends(image: UIImage.init(named: "friend"), name:"Тима"),
-        Friends(image: UIImage.init(named: "friend"), name:"Сеня"),
-        Friends(image: UIImage.init(named: "friend"), name:"Саня"),
-        Friends(image: UIImage.init(named: "friend"), name:"Ваня"),
-    ]
-    var sortedFriends = [Character:[Friends]]()
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        getFriends()
-        self.sortedFriends = sort(friends: friends)
-    }
-    private func sort(friends:[Friends])-> [Character:[Friends]]{
+    
+    var sortedFriends = [Character:[Friend]]()
+    var friends = [Friend]()
+    let request = Requests()
+    var count = 0
+    private func sort(friends:[Friend])-> [Character:[Friend]]{
         
-        var friendsSorted = [Character:[Friends]]()
-        
+        var friendsSorted = [Character:[Friend]]()
         friends.forEach(){ friend in
             
-            guard let firstChar = friend.name?.first else {return}
+            guard let firstChar = friend.lastName.first else {return}
             
             if var thisCharFriends = friendsSorted[firstChar] {
                 thisCharFriends.append(friend)
@@ -36,7 +27,19 @@ class FriendsViewController: UITableViewController {
                 friendsSorted[firstChar] = [friend]
             }
         }
+
         return friendsSorted
+    }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        request.getFriends { friends in
+            self.friends = friends.items
+            self.count = friends.count
+            self.sortedFriends = self.sort(friends: self.friends)
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
     }
     // MARK: - Table view data source
     
@@ -47,7 +50,6 @@ class FriendsViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         let keySorted = sortedFriends.keys.sorted()
-        
         let friends = sortedFriends[keySorted[section]]?.count ?? 0
         return friends
     }
@@ -64,10 +66,9 @@ class FriendsViewController: UITableViewController {
         let firstChar = sortedFriends.keys.sorted()[indexPath.section]
         let friends = sortedFriends[firstChar]!
         
-        let friend: Friends = friends[indexPath.row]
-        
-        cell.labelFriends.text = friend.name
-        cell.imageFriends.image = friend.image
+        let friend: Friend = friends[indexPath.row]
+        cell.labelFriends.text = friend.lastName + " " + friend.firstName
+        cell.imageFriends.image = friend.photo
         return cell
     }
     
@@ -88,38 +89,14 @@ class FriendsViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "favoriteFriend",
            let destinationVC = segue.destination as? FriendPageController,
-            let indexPath = tableView.indexPathForSelectedRow
+           let section = tableView.indexPathForSelectedRow?.section,
+           let indexPath = tableView.indexPathForSelectedRow
         {
-            destinationVC.friend = friends[indexPath.row]
+            let keySorted = sortedFriends.keys.sorted()
+            let friends = sortedFriends[keySorted[section]]
+            let friend: Friend? = friends?[indexPath.row]
+            destinationVC.friend = friend
             
         }
     }
-    
-    func getFriends() {
-        var urlComponentsOfFriends = URLComponents()
-            urlComponentsOfFriends.scheme = "https"
-            urlComponentsOfFriends.host = "api.vk.com"
-            urlComponentsOfFriends.path = "/method/friends.get"
-            urlComponentsOfFriends.queryItems = [
-                    URLQueryItem(name: "access_token", value: String(Session.shared.token)),
-                    URLQueryItem(name: "fields", value: "photo_50"),
-                    URLQueryItem(name: "lang", value: "en"),
-                    URLQueryItem(name: "count", value: "100"),
-                    URLQueryItem(name: "v", value: "5.89")
-                ]
-        let request = URLRequest(url: urlComponentsOfFriends.url!)
-        let urlSession = URLSession.shared
-        let task = urlSession.dataTask(with: request) { (data, response, error) -> Void in
-            if let error = error {
-                print(error)
-                return
-            } else {
-                let json = try? JSONSerialization.jsonObject(with: data!, options: .fragmentsAllowed)
-                print(json)
-            }
-        }
-        
-        task.resume()
-    }
-   
 }

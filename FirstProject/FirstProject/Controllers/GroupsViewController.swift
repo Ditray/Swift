@@ -12,15 +12,8 @@ class GroupsViewController: UITableViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     
     
-    let groups = [
-    Groups(image: UIImage.init(systemName: "photo.tv"), name: " 1 group"),
-    Groups(image: UIImage.init(systemName: "photo.tv"), name: " 2 group"),
-    Groups(image: UIImage.init(systemName: "photo.tv"), name: " 3 group"),
-    Groups(image: UIImage.init(systemName: "photo.tv"), name: " 4 group"),
-    Groups(image: UIImage.init(systemName: "photo.tv"), name: " 5 group"),
-    Groups(image: UIImage.init(systemName: "photo.tv"), name: " 6 group")
-    ]
-    var filteredGroups = [Groups]()
+    let groups = [Group]()
+    var filteredGroups = [Group]()
     var isSearching = false
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,10 +44,10 @@ class GroupsViewController: UITableViewController {
         }
         if isSearching {
             cell.nameGroup.text = filteredGroups[indexPath.row].name
-            cell.imageGroup.image = filteredGroups[indexPath.row].image
+            cell.imageGroup.image = filteredGroups[indexPath.row].photo
         } else {
             cell.nameGroup.text = groups[indexPath.row].name
-            cell.imageGroup.image = groups[indexPath.row].image
+            cell.imageGroup.image = groups[indexPath.row].photo
         }
         
         return cell
@@ -74,8 +67,8 @@ extension GroupsViewController: UISearchBarDelegate {
         searchGroup(q: searchText)
         for item in groups {
             let text = searchText.lowercased()
-            let isArrayContain = item.name?.lowercased().ranges(of: text)
-            if isArrayContain!.count > 0{
+            let isArrayContain = item.name.lowercased().ranges(of: text)
+            if isArrayContain.count > 0{
                 filteredGroups.append(item)
             }
         }

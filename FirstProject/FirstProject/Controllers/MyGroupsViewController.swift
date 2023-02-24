@@ -8,19 +8,20 @@
 import UIKit
 
 class MyGroupsViewController: UITableViewController {
-    var groups = [
-        Groups(image: UIImage.init(systemName: "paperplane.fill"), name: "подслушка"),
-        Groups(image: UIImage.init(systemName: "paperplane.fill"), name: "учеба"),
-        Groups(image: UIImage.init(systemName: "paperplane.fill"), name: "девайсы"),
-        Groups(image: UIImage.init(systemName: "paperplane.fill"), name: "работа"),
-        Groups(image: UIImage.init(systemName: "paperplane.fill"), name: "семья"),
-        Groups(image: UIImage.init(systemName: "paperplane.fill"), name: "приколы")
-        ]
     
+    var groups = [Group]()
+    let request = Requests()
+    var count = 0
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        getGroups()
+        request.getGroups { groups in
+            self.count = groups.count
+            self.groups = groups.items
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
     }
     
     @IBAction func addGroup(segue: UIStoryboardSegue) {
@@ -53,7 +54,7 @@ class MyGroupsViewController: UITableViewController {
             preconditionFailure("MyGroupsCell cannot")
         }
         cell.nameGroup.text = groups[indexPath.row].name
-        cell.imageGroup.image = groups[indexPath.row].image
+        cell.imageGroup.image = groups[indexPath.row].photo
         return cell
     }
     
@@ -65,31 +66,5 @@ class MyGroupsViewController: UITableViewController {
 
         }    
     }
-    func getGroups() {
-        var urlComponentsOfFriends = URLComponents()
-            urlComponentsOfFriends.scheme = "https"
-            urlComponentsOfFriends.host = "api.vk.com"
-            urlComponentsOfFriends.path = "/method/groups.get"
-            urlComponentsOfFriends.queryItems = [
-                    URLQueryItem(name: "access_token", value: String(Session.shared.token)),
-                    URLQueryItem(name: "extended", value: "1"),
-                    URLQueryItem(name: "lang", value: "0"),
-                    URLQueryItem(name: "fields", value: "city, country, place, description, wiki_page, members_count, counters, start_date, finish_date"),
-                    URLQueryItem(name: "count", value: "50"),
-                    URLQueryItem(name: "v", value: "5.81")
-                ]
-        let request = URLRequest(url: urlComponentsOfFriends.url!)
-        let urlSession = URLSession.shared
-        let task = urlSession.dataTask(with: request) { (data, response, error) -> Void in
-            if let error = error {
-                print(error)
-                return
-            } else {
-                let json = try? JSONSerialization.jsonObject(with: data!, options: .fragmentsAllowed)
-                print(json)
-            }
-        }
-        
-        task.resume()
-    }
+    
    }

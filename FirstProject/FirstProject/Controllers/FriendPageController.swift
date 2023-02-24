@@ -8,7 +8,7 @@
 import UIKit
 
 class FriendPageController: UICollectionViewController {
-    var friend: Friends?
+    var friend: Friend?
     let photosArray: [UIImage] = [UIImage(named: "1")!,UIImage(named: "2")!,UIImage(named: "3")!]
     // MARK: - Lifecycle
     
@@ -40,8 +40,8 @@ class FriendPageController: UICollectionViewController {
             preconditionFailure("FriendPageCell cannot")
             
         }
-            cell.imageOfFriend.image = friend?.image
-            cell.nameOfFriend.text = "Тоже " + (friend?.name ?? "")
+            cell.imageOfFriend.image = friend?.photo
+            cell.nameOfFriend.text = ("\((friend?.lastName)!) \((friend?.firstName)!)"  )
             return cell
         } else {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ContentFriendPageID", for: indexPath) as? ContentFriendPageCell else {
