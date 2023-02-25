@@ -60,4 +60,29 @@ class Requests{
 
         task.resume()
     }
+    func searchGroup(q:String, completion: @escaping (AllGroups) -> ())  {
+        
+        var urlComponents = URLComponents()
+        urlComponents.scheme = "https"
+        urlComponents.host = "api.vk.com"
+        urlComponents.path = "/method/groups.search"
+        urlComponents.queryItems = [
+            URLQueryItem(name: "access_token", value: String(Session.shared.token)),
+            URLQueryItem(name: "q", value:"\(q)" ),
+            URLQueryItem(name: "v", value: "5.131")
+            
+        ]
+        let request = URLRequest(url: urlComponents.url!)
+        let urlSession = URLSession.shared
+        let task = urlSession.dataTask(with: request) { (data, response, error) -> Void in
+            if let error = error {
+                print(error)
+                return
+            } else {
+                let groups = try! JSONDecoder().decode(GroupResponse.self, from: data!)
+                completion(groups.response)
+            }
+        }
+        task.resume()
+    }
 }

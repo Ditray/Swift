@@ -26,7 +26,6 @@ class Friend: Decodable {
         case firstName = "first_name"
         case lastName = "last_name"
     }
-    
     convenience required init(from decoder: Decoder) throws {
         self.init()
         let container = try decoder.container(keyedBy: FriendKeys.self)

@@ -55,6 +55,7 @@ class MyGroupsViewController: UITableViewController {
         }
         cell.nameGroup.text = groups[indexPath.row].name
         cell.imageGroup.image = groups[indexPath.row].photo
+        cell.descriptionGroup.text = groups[indexPath.row].description
         return cell
     }
     
