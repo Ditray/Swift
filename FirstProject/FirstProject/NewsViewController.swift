@@ -23,76 +23,52 @@ class NewsViewController: UITableViewController {
         super.viewDidLoad()
 
         tableView.register(UINib(nibName: "NewsCell", bundle: nil), forCellReuseIdentifier: "NewsCellID")
+        tableView.register(UINib(nibName: "TextCell", bundle: nil), forCellReuseIdentifier: "TextCell")
+        tableView.register(UINib(nibName: "PhotosCell", bundle: nil), forCellReuseIdentifier: "PhotosCell")
+        tableView.register(UINib(nibName: "UserInfoCell", bundle: nil), forCellReuseIdentifier: "UserInfoCell")
+        tableView.register(UINib(nibName: "FeedbackCell", bundle: nil), forCellReuseIdentifier: "FeedbackCell")
     }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
-    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return news.count
     }
 
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        var countOfRows = 4
+        if news[section].images == nil {
+            countOfRows -= 1
+        }
+        return countOfRows
+    }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "NewsCellID", for: indexPath) as? NewsViewCell else{
+        switch indexPath.row {
+        case 0: guard let cell = tableView.dequeueReusableCell(withIdentifier: "UserInfoCell") as? UserInfoCell else{
             preconditionFailure("Error")
         }
-
-        cell.nameLabel.text = news[indexPath.row].name
-        cell.avatarView.image = news[indexPath.row].avatar
-        cell.contentLabel.text = news[indexPath.row].text
-        cell.galleryImage.image = news[indexPath.row].images
-        return cell
+            cell.labelView.text = news[indexPath.section].name
+            cell.avatharView.image = news[indexPath.section].avatar
+            return cell
+        case 1: guard let cell = tableView.dequeueReusableCell(withIdentifier: "TextCell") as? TextCell else{
+            preconditionFailure("Error")
+        }
+            cell.textField.text = news[indexPath.section].text
+            return cell
+        case 2: guard let cell = tableView.dequeueReusableCell(withIdentifier: "PhotosCell") as? PhotosCell else{
+            preconditionFailure("Error")
+        }
+            cell.photo.image = news[indexPath.section].images
+            return cell
+        case 3: guard let cell = tableView.dequeueReusableCell(withIdentifier: "FeedbackCell") as? FeedbackCell else{
+            preconditionFailure("Error")
+        }
+            return cell
+        default:
+            let cell = UITableViewCell(style: .default, reuseIdentifier: "")
+            return cell
+        }
+        
     }
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

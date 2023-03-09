@@ -509,7 +509,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dPz-3v-0p4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6445" y="821"/>
+            <point key="canvasLocation" x="6444.6153846153848" y="820.37914691943126"/>
         </scene>
         <!--My Groups View Controller-->
         <scene sceneID="H5a-92-TGx">
@@ -520,7 +520,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyGroupsID" rowHeight="100" translatesAutoresizingMaskIntoConstraints="NO" id="gGw-W9-nLj" customClass="MyGroupsCell" customModule="FirstProject" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyGroupsID" rowHeight="100" translatesAutoresizingMaskIntoConstraints="NO" id="gGw-W9-nLj" customClass="MyGroupsCell" customModule="FirstProject" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="50" width="390" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gGw-W9-nLj" id="o6O-fu-hMh">

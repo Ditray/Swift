@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "AA66DF0D-D820-4C25-9B8D-1F249D8F0941"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "28984421-CA80-4165-B5D6-E604E31E2864"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FirstProject/Friends Branch/FriendsViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "10"
+            endingLineNumber = "10"
+            landmarkName = "FriendsViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "28984421-CA80-4165-B5D6-E604E31E2864 - dae31d8dd59ce37e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FirstProject.FriendsViewController.__allocating_init(style: __C.UITableViewStyle) -&gt; FirstProject.FriendsViewController"
+                  moduleName = "FirstProject"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ditray/Documents/GitHub/Swift/FirstProject/FirstProject/Friends%20Branch/FriendsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "20">
+               </Location>
+               <Location
+                  uuid = "28984421-CA80-4165-B5D6-E604E31E2864 - 5520cf469874627a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FirstProject.FriendsViewController.init(style: __C.UITableViewStyle) -&gt; FirstProject.FriendsViewController"
+                  moduleName = "FirstProject"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ditray/Documents/GitHub/Swift/FirstProject/FirstProject/Friends%20Branch/FriendsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "11"
+                  endingLineNumber = "11"
+                  offsetFromSymbolStart = "52">
+               </Location>
+               <Location
+                  uuid = "28984421-CA80-4165-B5D6-E604E31E2864 - 4f53d0bdeae7d1f6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FirstProject.FriendsViewController.__allocating_init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; FirstProject.FriendsViewController"
+                  moduleName = "FirstProject"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ditray/Documents/GitHub/Swift/FirstProject/FirstProject/Friends%20Branch/FriendsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "28">
+               </Location>
+               <Location
+                  uuid = "28984421-CA80-4165-B5D6-E604E31E2864 - 7220ba8fd75172a0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FirstProject.FriendsViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; FirstProject.FriendsViewController"
+                  moduleName = "FirstProject"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ditray/Documents/GitHub/Swift/FirstProject/FirstProject/Friends%20Branch/FriendsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "11"
+                  endingLineNumber = "11"
+                  offsetFromSymbolStart = "76">
+               </Location>
+               <Location
+                  uuid = "28984421-CA80-4165-B5D6-E604E31E2864 - 381d89e97d9f75c1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FirstProject.FriendsViewController.__allocating_init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;FirstProject.FriendsViewController&gt;"
+                  moduleName = "FirstProject"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ditray/Documents/GitHub/Swift/FirstProject/FirstProject/Friends%20Branch/FriendsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "20">
+               </Location>
+               <Location
+                  uuid = "28984421-CA80-4165-B5D6-E604E31E2864 - 702fd6380d9aff7d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FirstProject.FriendsViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;FirstProject.FriendsViewController&gt;"
+                  moduleName = "FirstProject"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ditray/Documents/GitHub/Swift/FirstProject/FirstProject/Friends%20Branch/FriendsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "11"
+                  endingLineNumber = "11"
+                  offsetFromSymbolStart = "52">
+               </Location>
+               <Location
+                  uuid = "28984421-CA80-4165-B5D6-E604E31E2864 - 917cdd99662146e7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FirstProject.FriendsViewController.__deallocating_deinit"
+                  moduleName = "FirstProject"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ditray/Documents/GitHub/Swift/FirstProject/FirstProject/Friends%20Branch/FriendsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

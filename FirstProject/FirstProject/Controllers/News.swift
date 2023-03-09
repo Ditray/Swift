@@ -9,7 +9,7 @@ import UIKit
 class News{
     let avatar: UIImage?
     let name: String
-    let text: String
+    let text: String?
     let images: UIImage?
     init(avatar: UIImage? = nil, name: String, text: String, images: UIImage?) {
         self.avatar = avatar
