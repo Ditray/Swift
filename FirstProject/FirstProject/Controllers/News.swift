@@ -6,7 +6,7 @@
 //
 
 import UIKit
-class News{
+class News_old{
     let avatar: UIImage?
     let name: String
     let text: String?

@@ -85,4 +85,27 @@ class Requests{
         }
         task.resume()
     }
+    func getNews(completion: @escaping (AllNews) -> ()) {
+        var urlComponents = URLComponents()
+        urlComponents.scheme = "https"
+        urlComponents.host = "api.vk.com"
+        urlComponents.path = "/method/newsfeed.get"
+        urlComponents.queryItems = [
+            URLQueryItem(name: "access_token", value: String(Session.shared.token)),
+            URLQueryItem(name: "v", value: "5.131"),
+            URLQueryItem(name: "filters", value: "post")
+        ]
+        let request = URLRequest(url: urlComponents.url!)
+        let urlSession = URLSession.shared
+        let task = urlSession.dataTask(with: request) { (data, response, error) -> Void in
+            if let error = error {
+                print(error)
+                return
+            } else {
+                let news = try! JSONDecoder().decode(NewsResponse.self, from: data!)
+                completion(news.response)
+            }
+        }
+        task.resume()
+    }
 }

@@ -9,6 +9,10 @@ import UIKit
 
 class FeedbackCell: UITableViewCell {
 
+    @IBOutlet var likeButton: UIButton!
+    @IBOutlet var commentButton: UIButton!
+    @IBOutlet var counter: UILabel!
+    @IBOutlet var shareButton: UIButton!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

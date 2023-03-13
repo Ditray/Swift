@@ -17,14 +17,14 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aFA-Yx-Ur4">
-                        <rect key="frame" x="60" y="20.000000000000004" width="35" height="34.333333333333343"/>
+                        <rect key="frame" x="70" y="20.000000000000004" width="35" height="34.333333333333343"/>
                         <state key="normal" title="Button"/>
-                        <buttonConfiguration key="configuration" style="plain" image="message" catalog="system"/>
+                        <buttonConfiguration key="configuration" style="plain" image="message" catalog="system" title="0"/>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IJl-u5-4x8">
-                        <rect key="frame" x="95" y="20.000000000000004" width="35" height="34.333333333333343"/>
+                        <rect key="frame" x="115" y="20.000000000000004" width="35" height="34.333333333333343"/>
                         <state key="normal" title="Button"/>
-                        <buttonConfiguration key="configuration" style="plain" image="arrowshape.turn.up.right" catalog="system"/>
+                        <buttonConfiguration key="configuration" style="plain" image="arrowshape.turn.up.right" catalog="system" title="0"/>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iKM-DL-m75">
                         <rect key="frame" x="20" y="20" width="40" height="35"/>
@@ -33,7 +33,7 @@
                             <constraint firstAttribute="height" constant="35" id="O8N-O9-c9g"/>
                         </constraints>
                         <state key="normal" title="Button"/>
-                        <buttonConfiguration key="configuration" style="plain" image="heart" catalog="system"/>
+                        <buttonConfiguration key="configuration" style="plain" image="heart" catalog="system" title="0"/>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10K" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hwr-g1-tIn">
                         <rect key="frame" x="270.33333333333331" y="27" width="28.666666666666686" height="20.333333333333329"/>
@@ -52,7 +52,7 @@
                 <constraints>
                     <constraint firstItem="Hwr-g1-tIn" firstAttribute="leading" secondItem="jfn-QT-kJE" secondAttribute="trailing" id="1Ke-xa-6Z5"/>
                     <constraint firstItem="aFA-Yx-Ur4" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" symbolic="YES" id="GTJ-oF-VvR"/>
-                    <constraint firstItem="aFA-Yx-Ur4" firstAttribute="leading" secondItem="iKM-DL-m75" secondAttribute="trailing" id="JmQ-nn-5zP"/>
+                    <constraint firstItem="aFA-Yx-Ur4" firstAttribute="leading" secondItem="iKM-DL-m75" secondAttribute="trailing" constant="10" id="JmQ-nn-5zP"/>
                     <constraint firstAttribute="bottom" secondItem="aFA-Yx-Ur4" secondAttribute="bottom" constant="20" symbolic="YES" id="PHG-wZ-ShG"/>
                     <constraint firstItem="Hwr-g1-tIn" firstAttribute="centerY" secondItem="jfn-QT-kJE" secondAttribute="centerY" id="PVq-5e-PmO"/>
                     <constraint firstAttribute="bottom" secondItem="IJl-u5-4x8" secondAttribute="bottom" constant="20" symbolic="YES" id="T3R-6S-aBo"/>
@@ -60,7 +60,7 @@
                     <constraint firstItem="IJl-u5-4x8" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" symbolic="YES" id="bC6-D7-0JE"/>
                     <constraint firstItem="jfn-QT-kJE" firstAttribute="centerY" secondItem="IJl-u5-4x8" secondAttribute="centerY" id="e8b-cg-40I"/>
                     <constraint firstAttribute="trailing" secondItem="Hwr-g1-tIn" secondAttribute="trailing" constant="20" symbolic="YES" id="hp1-kJ-yjR"/>
-                    <constraint firstItem="IJl-u5-4x8" firstAttribute="leading" secondItem="aFA-Yx-Ur4" secondAttribute="trailing" id="rrk-7b-qLu"/>
+                    <constraint firstItem="IJl-u5-4x8" firstAttribute="leading" secondItem="aFA-Yx-Ur4" secondAttribute="trailing" constant="10" id="rrk-7b-qLu"/>
                     <constraint firstAttribute="bottom" secondItem="iKM-DL-m75" secondAttribute="bottom" constant="20" symbolic="YES" id="vhw-Wn-Bkv"/>
                     <constraint firstItem="IJl-u5-4x8" firstAttribute="width" secondItem="iKM-DL-m75" secondAttribute="height" multiplier="1:1" id="x7t-Wl-CrC"/>
                     <constraint firstItem="iKM-DL-m75" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" symbolic="YES" id="z8s-3L-iBq"/>
@@ -68,6 +68,12 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="commentButton" destination="aFA-Yx-Ur4" id="gt2-A5-fzM"/>
+                <outlet property="counter" destination="Hwr-g1-tIn" id="tIE-vB-hH0"/>
+                <outlet property="likeButton" destination="iKM-DL-m75" id="ucQ-XD-uWR"/>
+                <outlet property="shareButton" destination="IJl-u5-4x8" id="AGD-Q3-Cw0"/>
+            </connections>
             <point key="canvasLocation" x="48.091603053435115" y="28.87323943661972"/>
         </tableViewCell>
     </objects>

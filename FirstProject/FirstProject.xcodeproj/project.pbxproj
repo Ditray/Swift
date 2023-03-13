@@ -36,6 +36,7 @@
 		F62DD41D29004090008FD48C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F62DD41C29004090008FD48C /* Assets.xcassets */; };
 		F62DD42029004090008FD48C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F62DD41E29004090008FD48C /* LaunchScreen.storyboard */; };
 		F62F028729673DE900C61ED4 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62F028629673DE900C61ED4 /* TabBarController.swift */; };
+		F6306F9F29BF953D00532B12 /* NewsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6306F9E29BF953D00532B12 /* NewsResponse.swift */; };
 		F63EA66A2937E7670044076E /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63EA6692937E7670044076E /* Session.swift */; };
 		F6A5B0DC293BE96C00561441 /* PhotosCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A5B0DB293BE96C00561441 /* PhotosCVCell.swift */; };
 		F6A5B0DE293BFC9A00561441 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A5B0DD293BFC9A00561441 /* PhotoViewController.swift */; };
@@ -83,6 +84,7 @@
 		F62DD41F29004090008FD48C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F62DD42129004090008FD48C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F62F028629673DE900C61ED4 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		F6306F9E29BF953D00532B12 /* NewsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsResponse.swift; sourceTree = "<group>"; };
 		F63EA6692937E7670044076E /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		F6A5B0DB293BE96C00561441 /* PhotosCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCVCell.swift; sourceTree = "<group>"; };
 		F6A5B0DD293BFC9A00561441 /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
@@ -122,6 +124,9 @@
 		F612BA0429181D6D005ABA08 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				F62DD41729004090008FD48C /* LoginViewController.swift */,
+				F62F028629673DE900C61ED4 /* TabBarController.swift */,
+				F6CACEFF2932CA460060413B /* AnimViewController.swift */,
 				F617D2B92931315D004EA17D /* NewsViewController.swift */,
 				F6FE7D9B290980C8004A8B91 /* FriendsViewController.swift */,
 				F612BA0629182643005ABA08 /* FriendPageController.swift */,
@@ -164,6 +169,7 @@
 				F617D2BB2931345B004EA17D /* News.swift */,
 				F622DEC529A77888003424C8 /* FriendResponse.swift */,
 				F622DECA29A9129A003424C8 /* GroupResponse.swift */,
+				F6306F9E29BF953D00532B12 /* NewsResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -199,11 +205,8 @@
 				F62DD41329004090008FD48C /* AppDelegate.swift */,
 				F60A4DEC294108BB00ED0968 /* NavigationController.swift */,
 				F62DD41529004090008FD48C /* SceneDelegate.swift */,
-				F62DD41729004090008FD48C /* LoginViewController.swift */,
 				F62DD41929004090008FD48C /* Main.storyboard */,
-				F62F028629673DE900C61ED4 /* TabBarController.swift */,
 				F622DEC729A77D80003424C8 /* Service */,
-				F6CACEFF2932CA460060413B /* AnimViewController.swift */,
 				F612BA0429181D6D005ABA08 /* Controllers */,
 				F612BA0529181DA4005ABA08 /* View */,
 				F60A4DEB2940FE6800ED0968 /* Animators */,
@@ -312,6 +315,7 @@
 				F6CACF002932CA460060413B /* AnimViewController.swift in Sources */,
 				F617D2BF293140C8004EA17D /* NewsViewCell.swift in Sources */,
 				F617D986291458830089FD9A /* MyGroupsViewController.swift in Sources */,
+				F6306F9F29BF953D00532B12 /* NewsResponse.swift in Sources */,
 				F6C179B429BA6CAE005B338B /* UserInfoCell.swift in Sources */,
 				F6252530292062F700C357D9 /* LikeControl.swift in Sources */,
 				F62DD41429004090008FD48C /* AppDelegate.swift in Sources */,
