@@ -8,9 +8,6 @@
 import UIKit
 
 class NewsViewController: UITableViewController {
-//    let news = [
-//        News_old(avatar:UIImage(named: "friend"), name: "Петр", text: "Все заголовки в навигаторе поиска Xcode могут быть изменены: Find можно «Заменить», Text может быть ссылкой или регулярным выражением, а Containing может быть сопоставлением, запуском и т. д. Вы также можете щелкнуть увеличительное стекло, чтобы просмотреть недавние поисковые запросы — при выборе одного из них он повторяется.", images: UIImage(named: "1"))
-//    ]
     let request = Requests()
     var news = [News]()
     
