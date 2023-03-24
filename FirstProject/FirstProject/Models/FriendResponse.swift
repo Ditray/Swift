@@ -7,6 +7,8 @@
 
 import Foundation
 import UIKit
+import RealmSwift
+import SwiftyJSON
 
 class FriendsResponse: Decodable {
     let response: AllFriends
@@ -15,11 +17,11 @@ class AllFriends: Decodable {
     var count = 0
     var items = [Friend]()
 }
-class Friend: Decodable {
-    var id = 0
-    var photo: UIImage!
-    var firstName = ""
-    var lastName = ""
+class Friend: Object, Decodable {
+    @objc dynamic var id = 0
+    @objc dynamic var photo = ""
+    @objc dynamic var firstName = ""
+    @objc dynamic var lastName = ""
     enum FriendKeys: String, CodingKey {
         case id
         case photo = "photo_100"
@@ -30,11 +32,7 @@ class Friend: Decodable {
         self.init()
         let container = try decoder.container(keyedBy: FriendKeys.self)
         self.id = try container.decode(Int.self, forKey: .id)
-        let photoReference = try container.decode(String.self, forKey: .photo)
-        
-        if let data = try? Data(contentsOf: URL(string: photoReference)!) {
-            photo = UIImage(data: data)
-        }
+        self.photo = try container.decode(String.self, forKey: .photo)
         self.firstName = try container.decode(String.self, forKey: .firstName)
         self.lastName = try container.decode(String.self, forKey: .lastName)
     }

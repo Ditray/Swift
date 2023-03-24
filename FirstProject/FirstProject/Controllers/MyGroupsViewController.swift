@@ -6,22 +6,27 @@
 //
 
 import UIKit
+import Alamofire
+import Foundation
 
 class MyGroupsViewController: UITableViewController {
-    
+    private let queue = OperationQueue()
     var groups = [Group]()
-    let request = Requests()
     var count = 0
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        request.getGroups { groups in
-            self.count = groups.count
-            self.groups = groups.items
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
+        let request = AF.request("https://api.vk.com/method/groups.get?access_token=vk1.a.7ECQlbhdb5CgMrOJVO6DwkgHR-dntYj842dJnpg7jnMV2lzou5C9O-RRflr1SH2de3UsmO4MrQs7athK7lkuJKbAAsWCrxemQDYEeOOUoFthbtjRxvjMphtrMHEX3vl1Vwt0Ls-MVcb_IFtE4Y5qb3VhnFjO-rJUX62J8qSJUhRFryS2Biq31SZ6CEX4MVacGMS4fcFehfrnpvZIqtGmrA&extended=1&lang=0&fields=city,country,place,description,wiki_page,members_count,counters,start_date,finish_date&v=5.131&count=50")
+        let getDataOperation = GetDataOperation(request: request)
+        queue.addOperation(getDataOperation)
+        getDataOperation.completionBlock = {
+            print(getDataOperation.data)
         }
+        let parseData = ParseGroupResponseData()
+        parseData.addDependency(getDataOperation)
+        queue.addOperation(parseData)
+        let reloadTableView = ReloadTableController(controller: self)
+        reloadTableView.addDependency(parseData)
+        OperationQueue.main.addOperation(reloadTableView)
     }
     
     @IBAction func addGroup(segue: UIStoryboardSegue) {

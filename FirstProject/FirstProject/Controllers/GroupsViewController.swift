@@ -13,7 +13,7 @@ class GroupsViewController: UITableViewController {
     
     
     var groups = [Group]()
-    let request = Requests()
+    let request = Service()
     var isSearching = false
     override func viewDidLoad() {
         super.viewDidLoad()

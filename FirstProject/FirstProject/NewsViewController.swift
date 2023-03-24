@@ -8,7 +8,7 @@
 import UIKit
 
 class NewsViewController: UITableViewController {
-    let request = Requests()
+    let request = Service()
     var news = [News]()
     
     override func viewDidLoad() {

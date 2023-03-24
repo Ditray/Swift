@@ -6,8 +6,20 @@
 //
 
 import Foundation
+import RealmSwift
 
-class Requests{
+class Service{
+    
+   func saveFriendsData(_ friends: [Friend]) {
+        do {
+            let realm = try Realm()
+            realm.beginWrite()
+            realm.add(friends)
+            try realm.commitWrite()
+        } catch {
+            print(error)
+        }
+    }
     func getFriends(completion: @escaping (AllFriends) -> ()) {
         var urlComponentsOfFriends = URLComponents()
         urlComponentsOfFriends.scheme = "https"

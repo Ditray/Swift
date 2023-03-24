@@ -11,7 +11,7 @@ class FriendsViewController: UITableViewController {
     
     var sortedFriends = [Character:[Friend]]()
     var friends = [Friend]()
-    let request = Requests()
+    let request = Service()
     var count = 0
     private func sort(friends:[Friend])-> [Character:[Friend]]{
         
@@ -37,6 +37,7 @@ class FriendsViewController: UITableViewController {
             self.count = friends.count
             self.sortedFriends = self.sort(friends: self.friends)
             DispatchQueue.main.async {
+                self.request.saveFriendsData(friends.items)
                 self.tableView.reloadData()
             }
         }
@@ -65,10 +66,14 @@ class FriendsViewController: UITableViewController {
         }
         let firstChar = sortedFriends.keys.sorted()[indexPath.section]
         let friends = sortedFriends[firstChar]!
-        
         let friend: Friend = friends[indexPath.row]
+        
+        if let data = try? Data(contentsOf: URL(string: friend.photo)!) {
+            let photo = UIImage(data: data)
+            cell.imageFriends.image = photo
+        }
         cell.labelFriends.text = friend.lastName + " " + friend.firstName
-        cell.imageFriends.image = friend.photo
+        
         return cell
     }
     
@@ -94,7 +99,7 @@ class FriendsViewController: UITableViewController {
         {
             let keySorted = sortedFriends.keys.sorted()
             let friends = sortedFriends[keySorted[section]]
-            let friend: Friend? = friends?[indexPath.row]
+            let friend: Friend = friends![indexPath.row]
             destinationVC.friend = friend
             
         }
