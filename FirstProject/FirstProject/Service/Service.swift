@@ -6,20 +6,10 @@
 //
 
 import Foundation
-import RealmSwift
+import PromiseKit
 
 class Service{
-    
-   func saveFriendsData(_ friends: [Friend]) {
-        do {
-            let realm = try Realm()
-            realm.beginWrite()
-            realm.add(friends)
-            try realm.commitWrite()
-        } catch {
-            print(error)
-        }
-    }
+    private let urlSession = URLSession.shared
     func getFriends(completion: @escaping (AllFriends) -> ()) {
         var urlComponentsOfFriends = URLComponents()
         urlComponentsOfFriends.scheme = "https"
@@ -33,7 +23,6 @@ class Service{
             URLQueryItem(name: "v", value: "5.131")
         ]
         let request = URLRequest(url: urlComponentsOfFriends.url!)
-        let urlSession = URLSession.shared
         let task = urlSession.dataTask(with: request) { (data, response, error) -> Void in
             if let error = error {
                 print(error)
@@ -59,7 +48,6 @@ class Service{
                     URLQueryItem(name: "v", value: "5.131")
                 ]
         let request = URLRequest(url: urlComponentsOfFriends.url!)
-        let urlSession = URLSession.shared
         let task = urlSession.dataTask(with: request) { (data, response, error) -> Void in
             if let error = error {
                 print(error)
@@ -85,7 +73,6 @@ class Service{
             
         ]
         let request = URLRequest(url: urlComponents.url!)
-        let urlSession = URLSession.shared
         let task = urlSession.dataTask(with: request) { (data, response, error) -> Void in
             if let error = error {
                 print(error)
@@ -119,5 +106,52 @@ class Service{
             }
         }
         task.resume()
+    }
+    
+    func getUrl() -> Promise<URL> {
+        var urlComponents = URLComponents()
+        urlComponents.scheme = "https"
+        urlComponents.host = "api.vk.com"
+        urlComponents.path = "/method/newsfeed.get"
+        urlComponents.queryItems = [
+            URLQueryItem(name: "access_token", value: String(Session.shared.token)),
+            URLQueryItem(name: "v", value: "5.131"),
+            URLQueryItem(name: "filters", value: "post")
+        ]
+        return Promise { resolver in
+            guard let url = urlComponents.url else {
+                resolver.reject("unknown" as! Error)
+                return
+            }
+            resolver.fulfill(url)
+        }
+    }
+    func getData(_ url: URL) -> Promise<Data> {
+        return Promise { resolver in
+            urlSession.dataTask(with: url) { (data, response, error) in
+                guard let data = data else {
+                    resolver.reject("unknown" as! Error)
+                    return
+                }
+                resolver.fulfill(data)
+            }.resume()
+        }
+    }
+    func ParseData(_ data: Data) -> Promise<AllNews> {
+        return Promise { resolver in
+            do{
+                let response = try JSONDecoder().decode(NewsResponse.self, from: data).response
+                resolver.fulfill(response)
+            } catch {
+                resolver.reject("unknown" as! Error)
+            }
+        }
+    }
+    func getNews(_ items: AllNews) -> Promise<[News]> {
+        return Promise { resolver in
+            var news = items.items
+            resolver.fulfill(news)
+        }
+        
     }
 }

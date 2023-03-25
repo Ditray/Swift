@@ -11,7 +11,8 @@ class FriendsViewController: UITableViewController {
     
     var sortedFriends = [Character:[Friend]]()
     var friends = [Friend]()
-    let request = Service()
+    let requests = Service()
+    let realmService = RealmService()
     var count = 0
     private func sort(friends:[Friend])-> [Character:[Friend]]{
         
@@ -32,12 +33,12 @@ class FriendsViewController: UITableViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        request.getFriends { friends in
+        requests.getFriends { friends in
             self.friends = friends.items
             self.count = friends.count
             self.sortedFriends = self.sort(friends: self.friends)
             DispatchQueue.main.async {
-                self.request.saveFriendsData(friends.items)
+                self.realmService.saveFriendsData(friends.items)
                 self.tableView.reloadData()
             }
         }

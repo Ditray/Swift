@@ -42,6 +42,8 @@
 		F6472E7629C50E9B00DDFCED /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F6472E7529C50E9B00DDFCED /* RealmSwift */; };
 		F678E06629CCA92600AAC8BD /* Operations.swift in Sources */ = {isa = PBXBuildFile; fileRef = F678E06529CCA92600AAC8BD /* Operations.swift */; };
 		F678E06929CCAD0E00AAC8BD /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = F678E06829CCAD0E00AAC8BD /* Alamofire */; };
+		F678E06C29CE014D00AAC8BD /* PromiseKit in Frameworks */ = {isa = PBXBuildFile; productRef = F678E06B29CE014D00AAC8BD /* PromiseKit */; };
+		F678E07029CF850300AAC8BD /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F678E06F29CF850300AAC8BD /* RealmService.swift */; };
 		F69E588829C8D953000A2247 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = F69E588729C8D953000A2247 /* SwiftyJSON */; };
 		F6A5B0DC293BE96C00561441 /* PhotosCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A5B0DB293BE96C00561441 /* PhotosCVCell.swift */; };
 		F6A5B0DE293BFC9A00561441 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A5B0DD293BFC9A00561441 /* PhotoViewController.swift */; };
@@ -91,6 +93,7 @@
 		F6306F9E29BF953D00532B12 /* NewsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsResponse.swift; sourceTree = "<group>"; };
 		F63EA6692937E7670044076E /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		F678E06529CCA92600AAC8BD /* Operations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operations.swift; sourceTree = "<group>"; };
+		F678E06F29CF850300AAC8BD /* RealmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
 		F6A5B0DB293BE96C00561441 /* PhotosCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCVCell.swift; sourceTree = "<group>"; };
 		F6A5B0DD293BFC9A00561441 /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 		F6C179A629BA4F74005B338B /* TextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextCell.swift; sourceTree = "<group>"; };
@@ -109,6 +112,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F678E06C29CE014D00AAC8BD /* PromiseKit in Frameworks */,
 				F69E588829C8D953000A2247 /* SwiftyJSON in Frameworks */,
 				F678E06929CCAD0E00AAC8BD /* Alamofire in Frameworks */,
 				F6472E7629C50E9B00DDFCED /* RealmSwift in Frameworks */,
@@ -187,6 +191,7 @@
 				F63EA6692937E7670044076E /* Session.swift */,
 				F622DEC829A77DAD003424C8 /* Service.swift */,
 				F678E06529CCA92600AAC8BD /* Operations.swift */,
+				F678E06F29CF850300AAC8BD /* RealmService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -247,6 +252,7 @@
 				F6472E7529C50E9B00DDFCED /* RealmSwift */,
 				F69E588729C8D953000A2247 /* SwiftyJSON */,
 				F678E06829CCAD0E00AAC8BD /* Alamofire */,
+				F678E06B29CE014D00AAC8BD /* PromiseKit */,
 			);
 			productName = FirstProject;
 			productReference = F62DD41029004090008FD48C /* FirstProject.app */;
@@ -280,6 +286,7 @@
 				F6472E7229C50E9B00DDFCED /* XCRemoteSwiftPackageReference "realm-swift" */,
 				F69E588629C8D953000A2247 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 				F678E06729CCAD0E00AAC8BD /* XCRemoteSwiftPackageReference "Alamofire" */,
+				F678E06A29CE014D00AAC8BD /* XCRemoteSwiftPackageReference "PromiseKit" */,
 			);
 			productRefGroup = F62DD41129004090008FD48C /* Products */;
 			projectDirPath = "";
@@ -319,6 +326,7 @@
 				F6A5B0DC293BE96C00561441 /* PhotosCVCell.swift in Sources */,
 				F602B69D2912FE1800B6F26D /* FriendsCell.swift in Sources */,
 				F60A4DED294108BB00ED0968 /* NavigationController.swift in Sources */,
+				F678E07029CF850300AAC8BD /* RealmService.swift in Sources */,
 				F6FE7D9C290980C8004A8B91 /* FriendsViewController.swift in Sources */,
 				F60A4DE82940F3C500ED0968 /* PushAnimator.swift in Sources */,
 				F6C179AC29BA4FCD005B338B /* PhotosCell.swift in Sources */,
@@ -581,6 +589,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		F678E06A29CE014D00AAC8BD /* XCRemoteSwiftPackageReference "PromiseKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mxcl/PromiseKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
 		F69E588629C8D953000A2247 /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON";
@@ -606,6 +622,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F678E06729CCAD0E00AAC8BD /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		F678E06B29CE014D00AAC8BD /* PromiseKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F678E06A29CE014D00AAC8BD /* XCRemoteSwiftPackageReference "PromiseKit" */;
+			productName = PromiseKit;
 		};
 		F69E588729C8D953000A2247 /* SwiftyJSON */ = {
 			isa = XCSwiftPackageProductDependency;

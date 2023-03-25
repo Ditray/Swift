@@ -8,19 +8,33 @@
 import UIKit
 
 class NewsViewController: UITableViewController {
-    let request = Service()
+    let service = Service()
     var news = [News]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        DispatchQueue.global().async {
-            self.request.getNews { response in
-                self.news = response.items
-                DispatchQueue.main.async {
-                    self.tableView.reloadData()
-                }
+//        DispatchQueue.global().async {
+//            self.request.getNews { response in
+//                self.news = response.items
+//                DispatchQueue.main.async {
+//                    self.tableView.reloadData()
+//                }
+//            }
+//        }
+        service.getUrl()
+            .get({
+                print($0)
+            })
+            .then(on: .global(), service.getData(_:))
+            .then(service.ParseData(_:))
+            .then(service.getNews(_:))
+            .done(on: .main) { news in
+                self.news = news
+                self.tableView.reloadData()
+            }.catch { error in
+                print(error)
             }
-        }
+        
         tableView.register(UINib(nibName: "NewsCell", bundle: nil), forCellReuseIdentifier: "NewsCellID")
         tableView.register(UINib(nibName: "TextCell", bundle: nil), forCellReuseIdentifier: "TextCell")
         tableView.register(UINib(nibName: "PhotosCell", bundle: nil), forCellReuseIdentifier: "PhotosCell")

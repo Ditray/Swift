@@ -22,6 +22,7 @@ class Friend: Object, Decodable {
     @objc dynamic var photo = ""
     @objc dynamic var firstName = ""
     @objc dynamic var lastName = ""
+    var photoImageView: UIImage?
     enum FriendKeys: String, CodingKey {
         case id
         case photo = "photo_100"
@@ -37,3 +38,4 @@ class Friend: Object, Decodable {
         self.lastName = try container.decode(String.self, forKey: .lastName)
     }
 }
+
