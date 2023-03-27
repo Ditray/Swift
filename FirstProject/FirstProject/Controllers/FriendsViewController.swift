@@ -9,11 +9,12 @@ import UIKit
 
 class FriendsViewController: UITableViewController {
     
-    var sortedFriends = [Character:[Friend]]()
     var friends = [Friend]()
-    let requests = Service()
     let realmService = RealmService()
     var count = 0
+    private var sortedFriends = [Character:[Friend]]()
+    private let service = Service()
+    private var photoService: PhotoService?
     private func sort(friends:[Friend])-> [Character:[Friend]]{
         
         var friendsSorted = [Character:[Friend]]()
@@ -33,7 +34,8 @@ class FriendsViewController: UITableViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        requests.getFriends { friends in
+        photoService = PhotoService(container: tableView)
+        service.getFriends { friends in
             self.friends = friends.items
             self.count = friends.count
             self.sortedFriends = self.sort(friends: self.friends)
@@ -68,11 +70,8 @@ class FriendsViewController: UITableViewController {
         let firstChar = sortedFriends.keys.sorted()[indexPath.section]
         let friends = sortedFriends[firstChar]!
         let friend: Friend = friends[indexPath.row]
-        
-        if let data = try? Data(contentsOf: URL(string: friend.photo)!) {
-            let photo = UIImage(data: data)
-            cell.imageFriends.image = photo
-        }
+        let photo = photoService?.photo(atIndexpath: indexPath, byUrl: friend.photo)
+        cell.imageFriends.image = photo
         cell.labelFriends.text = friend.lastName + " " + friend.firstName
         
         return cell

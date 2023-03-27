@@ -66,7 +66,6 @@ class NewsViewController: UITableViewController {
             guard let urlImage = news.items[indexPath.section].attachments?.first?.photo?.sizes[4].url else {return UITableViewCell()}
             let image = photoService?.photo(atIndexpath: indexPath, byUrl: urlImage)
             cell.photo.image = image
-//            cell.photo.image = service.refToImage(urlImage ?? "https://sun1-14.userapi.com/s/v1/ig2/v_vR1jGs5jHWF0OwuBSpD_xc5fB1wGtgQnUNYyD_X9xVI1luZwpGSFcsgBhIi6CYaVXSQgJcka8s5SRNPHvc74iF.jpg?size=100x100&quality=95&crop=0")
             return cell
         case 3: guard let cell = tableView.dequeueReusableCell(withIdentifier: "FeedbackCell") as? FeedbackCell else{
             preconditionFailure("Error")
