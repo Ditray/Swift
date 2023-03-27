@@ -20,7 +20,7 @@ class Group: Decodable {
     var members_count = Int?(0)
     var description = String?("")
     var name = ""
-    var photo: UIImage!
+    var photo: UIImage?
     enum CodingKeys: String, CodingKey {
         case id
         case description

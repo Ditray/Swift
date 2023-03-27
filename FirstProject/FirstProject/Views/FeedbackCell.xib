@@ -17,12 +17,12 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aFA-Yx-Ur4">
-                        <rect key="frame" x="70" y="20.000000000000004" width="35" height="34.333333333333343"/>
+                        <rect key="frame" x="60" y="20.000000000000004" width="35" height="34.333333333333343"/>
                         <state key="normal" title="Button"/>
                         <buttonConfiguration key="configuration" style="plain" image="message" catalog="system" title="0"/>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IJl-u5-4x8">
-                        <rect key="frame" x="115" y="20.000000000000004" width="35" height="34.333333333333343"/>
+                        <rect key="frame" x="105" y="20.000000000000004" width="35" height="34.333333333333343"/>
                         <state key="normal" title="Button"/>
                         <buttonConfiguration key="configuration" style="plain" image="arrowshape.turn.up.right" catalog="system" title="0"/>
                     </button>
@@ -52,7 +52,7 @@
                 <constraints>
                     <constraint firstItem="Hwr-g1-tIn" firstAttribute="leading" secondItem="jfn-QT-kJE" secondAttribute="trailing" id="1Ke-xa-6Z5"/>
                     <constraint firstItem="aFA-Yx-Ur4" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" symbolic="YES" id="GTJ-oF-VvR"/>
-                    <constraint firstItem="aFA-Yx-Ur4" firstAttribute="leading" secondItem="iKM-DL-m75" secondAttribute="trailing" constant="10" id="JmQ-nn-5zP"/>
+                    <constraint firstItem="aFA-Yx-Ur4" firstAttribute="leading" secondItem="iKM-DL-m75" secondAttribute="trailing" id="JmQ-nn-5zP"/>
                     <constraint firstAttribute="bottom" secondItem="aFA-Yx-Ur4" secondAttribute="bottom" constant="20" symbolic="YES" id="PHG-wZ-ShG"/>
                     <constraint firstItem="Hwr-g1-tIn" firstAttribute="centerY" secondItem="jfn-QT-kJE" secondAttribute="centerY" id="PVq-5e-PmO"/>
                     <constraint firstAttribute="bottom" secondItem="IJl-u5-4x8" secondAttribute="bottom" constant="20" symbolic="YES" id="T3R-6S-aBo"/>

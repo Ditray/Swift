@@ -8,23 +8,14 @@
 import UIKit
 
 class NewsViewController: UITableViewController {
-    let service = Service()
-    var news = [News]()
+    private let service = Service()
+    private var photoService: PhotoService?
+    var news = AllNews()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        DispatchQueue.global().async {
-//            self.request.getNews { response in
-//                self.news = response.items
-//                DispatchQueue.main.async {
-//                    self.tableView.reloadData()
-//                }
-//            }
-//        }
+        photoService = PhotoService(container: tableView)
         service.getUrl()
-            .get({
-                print($0)
-            })
             .then(on: .global(), service.getData(_:))
             .then(service.ParseData(_:))
             .then(service.getNews(_:))
@@ -45,12 +36,12 @@ class NewsViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return news.count
+        return news.items.count
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         var countOfRows = 4
-//        if news[section]. == nil {
+//        if news.items[section].attachments?.isEmpty == true {
 //            countOfRows -= 1
 //        }
         return countOfRows
@@ -67,20 +58,23 @@ class NewsViewController: UITableViewController {
         case 1: guard let cell = tableView.dequeueReusableCell(withIdentifier: "TextCell") as? TextCell else{
             preconditionFailure("Error")
         }
-            cell.textField.text = news[indexPath.section].text
+            cell.textField.text = news.items[indexPath.section].text
             return cell
         case 2: guard let cell = tableView.dequeueReusableCell(withIdentifier: "PhotosCell") as? PhotosCell else{
             preconditionFailure("Error")
         }
-            cell.photo.image = UIImage(named: "1")
+            guard let urlImage = news.items[indexPath.section].attachments?.first?.photo?.sizes[4].url else {return UITableViewCell()}
+            let image = photoService?.photo(atIndexpath: indexPath, byUrl: urlImage)
+            cell.photo.image = image
+//            cell.photo.image = service.refToImage(urlImage ?? "https://sun1-14.userapi.com/s/v1/ig2/v_vR1jGs5jHWF0OwuBSpD_xc5fB1wGtgQnUNYyD_X9xVI1luZwpGSFcsgBhIi6CYaVXSQgJcka8s5SRNPHvc74iF.jpg?size=100x100&quality=95&crop=0")
             return cell
         case 3: guard let cell = tableView.dequeueReusableCell(withIdentifier: "FeedbackCell") as? FeedbackCell else{
             preconditionFailure("Error")
         }
-            cell.counter.text = String(news[indexPath.section].views.count)
-            cell.likeButton.titleLabel?.text = String(news[indexPath.section].likes.count)
-            cell.shareButton.titleLabel?.text = String(news[indexPath.section].reposts.count)
-            cell.commentButton.titleLabel?.text = String(news[indexPath.section].comments.count)
+            cell.counter.text = String(news.items[indexPath.section].views.count)
+            cell.likeButton.titleLabel?.text = String(news.items[indexPath.section].likes.count)
+            cell.shareButton.titleLabel?.text = String(news.items[indexPath.section].reposts.count)
+            cell.commentButton.titleLabel?.text = String(news.items[indexPath.section].comments.count)
             return cell
         default:
             let cell = UITableViewCell(style: .default, reuseIdentifier: "")
